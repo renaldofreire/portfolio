@@ -155,18 +155,27 @@
             <!-- Chave de Acesso Web3Forms -->
             <input type="hidden" name="access_key" value="cd2eb4c2-8333-44a4-acbf-f8e09873285b">
 
-            <div class="form-group">
-              <label for="name" data-pt="nome" data-en="name">nome</label>
-              <input type="text" name="name" id="name" placeholder="Seu nome" required>
-            </div>
-            <div class="form-group">
-              <label for="email" data-pt="e-mail" data-en="e-mail">e-mail</label>
-              <input type="email" name="email" id="email" placeholder="seu@email.com" required>
-            </div>
-            <div class="form-group">
-              <label for="message" data-pt="mensagem" data-en="message">mensagem</label>
-              <textarea name="message" id="message" placeholder="Olá Renaldo..." required></textarea>
-            </div>
+          <div class="form-group">
+            <label for="name" data-pt="nome" data-en="name">nome</label>
+            <input type="text" name="name" id="name" 
+                   placeholder="Seu nome" 
+                   data-pt-placeholder="Seu nome" 
+                   data-en-placeholder="Your name" required>
+          </div>
+          <div class="form-group">
+            <label for="email" data-pt="e-mail" data-en="e-mail">e-mail</label>
+            <input type="email" name="email" id="email" 
+                   placeholder="seu@email.com" 
+                   data-pt-placeholder="seu@email.com" 
+                   data-en-placeholder="your@email.com" required>
+          </div>
+          <div class="form-group">
+            <label for="message" data-pt="mensagem" data-en="message">mensagem</label>
+            <textarea name="message" id="message" 
+                      placeholder="Olá Renaldo..." 
+                      data-pt-placeholder="Olá Renaldo..." 
+                      data-en-placeholder="Hello Renaldo..." required></textarea>
+          </div>
             <button type="submit" id="submitBtn" class="btn-primary" data-pt="enviar mensagem" data-en="send message">enviar mensagem</button>
           </form>
 
@@ -227,7 +236,7 @@
 
   <!-- Dados dos repositórios injetados pelo Python no build -->
   <script id="reposData" type="application/json">
-    [{"description": "my new portfolio", "forks": 0, "language": "CSS", "name": "portfolio", "stars": 0, "topics": [], "updated_at": "2026-04-07T09:23:41Z", "url": "https://github.com/renaldofreire/portfolio"}, {"description": "my dotfile config", "forks": 0, "language": "Python", "name": "dotfiles", "stars": 0, "topics": [], "updated_at": "2026-03-30T01:53:46Z", "url": "https://github.com/renaldofreire/dotfiles"}, {"description": "Personal learning journal for the Python Programming MOOC 2026 offered by the University of Helsinki. This repository tracks my progress, exercises, and notes across all 14 parts of the course.", "forks": 0, "language": "Python", "name": "python_MOOC_2026", "stars": 0, "topics": [], "updated_at": "2026-02-26T04:50:33Z", "url": "https://github.com/renaldofreire/python_MOOC_2026"}, {"description": "List my packages", "forks": 0, "language": "Python", "name": "pypacks", "stars": 0, "topics": [], "updated_at": "2025-06-02T05:35:32Z", "url": "https://github.com/renaldofreire/pypacks"}]
+    [{"description": "my new portfolio", "forks": 0, "language": "CSS", "name": "portfolio", "stars": 0, "topics": [], "updated_at": "2026-04-07T09:29:06Z", "url": "https://github.com/renaldofreire/portfolio"}, {"description": "my dotfile config", "forks": 0, "language": "Python", "name": "dotfiles", "stars": 0, "topics": [], "updated_at": "2026-03-30T01:53:46Z", "url": "https://github.com/renaldofreire/dotfiles"}, {"description": "Personal learning journal for the Python Programming MOOC 2026 offered by the University of Helsinki. This repository tracks my progress, exercises, and notes across all 14 parts of the course.", "forks": 0, "language": "Python", "name": "python_MOOC_2026", "stars": 0, "topics": [], "updated_at": "2026-02-26T04:50:33Z", "url": "https://github.com/renaldofreire/python_MOOC_2026"}, {"description": "List my packages", "forks": 0, "language": "Python", "name": "pypacks", "stars": 0, "topics": [], "updated_at": "2025-06-02T05:35:32Z", "url": "https://github.com/renaldofreire/pypacks"}]
   </script>
 
   <script src="static/js/main.js"></script>
