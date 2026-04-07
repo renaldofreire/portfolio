@@ -6,7 +6,7 @@ const THEME_KEY = "rf-theme";
 function applyTheme(dark) {
   document.body.classList.toggle("dark", dark);
   const btn = document.getElementById("themeBtn");
-  if (btn) btn.textContent = dark ? "◑ claro" : "◐ escuro";
+  if (btn) btn.innerHTML = dark ? "☀️" : "🌙";
 }
 
 function toggleTheme() {
@@ -34,8 +34,8 @@ function applyLang(lang) {
   document.documentElement.lang = lang === "pt" ? "pt-BR" : "en";
   const btn = document.getElementById("langBtn");
   if (btn) {
-    // Mostra a bandeira do idioma para o qual o usuário pode mudar
-    btn.innerHTML = lang === "pt" ? "<span>🇬🇧</span> EN" : "<span>🇧🇷</span> PT";
+    // Mostra apenas a bandeira do idioma para o qual o usuário pode mudar
+    btn.innerHTML = lang === "pt" ? "🇬🇧" : "🇧🇷";
   }
 
   document.querySelectorAll("[data-pt][data-en]").forEach((el) => {
