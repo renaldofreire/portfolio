@@ -33,7 +33,10 @@ function applyLang(lang) {
   currentLang = lang;
   document.documentElement.lang = lang === "pt" ? "pt-BR" : "en";
   const btn = document.getElementById("langBtn");
-  if (btn) btn.textContent = lang === "pt" ? "EN" : "PT";
+  if (btn) {
+    // Mostra a bandeira do idioma para o qual o usuário pode mudar
+    btn.innerHTML = lang === "pt" ? "<span>🇬🇧</span> EN" : "<span>🇧🇷</span> PT";
+  }
 
   document.querySelectorAll("[data-pt][data-en]").forEach((el) => {
     el.innerHTML = el.dataset[lang];
