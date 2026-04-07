@@ -1,0 +1,62 @@
+[
+  {
+    "name": "portfolio",
+    "description": "my new portfolio",
+    "language": "CSS",
+    "stars": 0,
+    "forks": 0,
+    "url": "https://github.com/renaldofreire/portfolio",
+    "topics": [],
+    "updated_at": "2026-04-07T06:02:10Z"
+  },
+  {
+    "name": "dotfiles",
+    "description": "my dotfile config",
+    "language": "Python",
+    "stars": 0,
+    "forks": 0,
+    "url": "https://github.com/renaldofreire/dotfiles",
+    "topics": [],
+    "updated_at": "2026-03-30T01:53:46Z"
+  },
+  {
+    "name": "python_MOOC_2026",
+    "description": "Personal learning journal for the Python Programming MOOC 2026 offered by the University of Helsinki. This repository tracks my progress, exercises, and notes across all 14 parts of the course.",
+    "language": "Python",
+    "stars": 0,
+    "forks": 0,
+    "url": "https://github.com/renaldofreire/python_MOOC_2026",
+    "topics": [],
+    "updated_at": "2026-02-26T04:50:33Z"
+  },
+  {
+    "name": "pypacks",
+    "description": "List my packages",
+    "language": "Python",
+    "stars": 0,
+    "forks": 0,
+    "url": "https://github.com/renaldofreire/pypacks",
+    "topics": [],
+    "updated_at": "2025-06-02T05:35:32Z"
+  },
+  {
+    "name": "renaldofreire",
+    "description": "Sobre mim.",
+    "language": "—",
+    "stars": 0,
+    "forks": 0,
+    "url": "https://github.com/renaldofreire/renaldofreire",
+    "topics": [],
+    "updated_at": "2025-04-02T17:24:14Z"
+  },
+  {
+    "name": "rename-folders",
+    "description": "Rename folders simple script.",
+    "language": "Python",
+    "stars": 0,
+    "forks": 0,
+    "url": "https://github.com/renaldofreire/rename-folders",
+    "topics": [],
+    "updated_at": "2024-12-09T15:52:02Z"
+  }
+]
