@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portfolio de Renaldo Freire — Analista de Qualidade & Desenvolvedor Python">
+  <title>Renaldo Freire</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>☕</text></svg>">
+</head>
+<body>
+
+  <nav>
+    <div class="wrapper nav-inner">
+      <div class="logo">
+        <span class="coffee-dot"></span>
+        renaldo<span class="logo-accent">.</span>dev
+      </div>
+      <div class="nav-links">
+        <a href="#sobre"   data-pt="sobre"    data-en="about">sobre</a>
+        <a href="#projetos" data-pt="projetos" data-en="projects">projetos</a>
+        <a href="#blog"    data-pt="blog"     data-en="blog">blog</a>
+        <a href="#contato" data-pt="contato"  data-en="contact">contato</a>
+      </div>
+      <div class="nav-controls">
+        <button class="ctrl-btn" id="langBtn" onclick="toggleLang()" aria-label="Alternar idioma">EN</button>
+        <button class="ctrl-btn" id="themeBtn" onclick="toggleTheme()" aria-label="Alternar tema">◐ escuro</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrapper">
+      <div class="hero-tag" data-pt="portfolio pessoal" data-en="personal portfolio">portfolio pessoal</div>
+
+      <div class="cup-wrap">
+        <svg class="steam-svg" width="24" height="32" viewBox="0 0 24 32" fill="none" aria-hidden="true">
+          <path class="steam-path" d="M12 30 Q6 22 12 16 Q18 10 12 4"
+                stroke="currentColor" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+        </svg>
+        <span class="cup-emoji" aria-hidden="true">☕</span>
+      </div>
+
+      <h1>Renaldo<br><em>Freire</em></h1>
+      <p class="hero-sub"
+         data-pt="Analista de Qualidade & Desenvolvedor Python<br>Maracanaú, Ceará — Brasil"
+         data-en="Quality Analyst & Python Developer<br>Maracanaú, Ceará — Brazil">
+        Analista de Qualidade & Desenvolvedor Python<br>Maracanaú, Ceará — Brasil
+      </p>
+      <div class="hero-actions">
+        <a href="#projetos" class="btn-primary" data-pt="ver projetos"    data-en="view projects">ver projetos</a>
+        <a href="#contato"  class="btn-secondary" data-pt="entrar em contato" data-en="get in touch">entrar em contato</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOBRE -->
+  <section id="sobre">
+    <div class="wrapper">
+      <div class="section-label" data-pt="sobre mim" data-en="about me">sobre mim</div>
+      <div class="about-grid">
+        <div class="about-text">
+          <p data-pt="Formado em Análise e Desenvolvimento de Sistemas, com ampla experiência como Transaction Quality Analyst. Amante de software livre e café."
+             data-en="Graduated in Systems Analysis and Development, with extensive experience as a Transaction Quality Analyst. Open source and coffee enthusiast.">
+            Formado em Análise e Desenvolvimento de Sistemas, com ampla experiência como Transaction Quality Analyst. Amante de software livre e café.
+          </p>
+          <p class="sub"
+             data-pt="Trabalho com qualidade de processos, relatórios analíticos e governança. Desenvolvo projetos pessoais em Python, Linux e automação."
+             data-en="I work with process quality, analytical reporting and governance. Personal projects in Python, Linux and automation.">
+            Trabalho com qualidade de processos, relatórios analíticos e governança. Desenvolvo projetos pessoais em Python, Linux e automação.
+          </p>
+          <div class="about-tags">
+            <span class="tag">Python</span>
+            <span class="tag">Linux</span>
+            <span class="tag">Quality Analyst</span>
+            <span class="tag">Proxmox</span>
+            <span class="tag">Docker</span>
+            <span class="tag">Arch Linux</span>
+          </div>
+        </div>
+        <div class="about-stats">
+          <div class="stat-item">
+            <div class="stat-num">7+</div>
+            <div class="stat-label" data-pt="anos na empresa" data-en="years at the company">anos na empresa</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num">6+</div>
+            <div class="stat-label" data-pt="anos como TQA" data-en="years as TQA">anos como TQA</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num">∞</div>
+            <div class="stat-label" data-pt="xícaras de café" data-en="cups of coffee">xícaras de café</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJETOS -->
+  <section id="projetos">
+    <div class="wrapper">
+      <div class="section-label" data-pt="projetos" data-en="projects">projetos</div>
+      <div class="projects-grid" id="projectsGrid">
+        {# Renderizado pelo JavaScript a partir de repos.json #}
+      </div>
+      <a href="https://github.com/renaldofreire"
+         target="_blank" rel="noopener"
+         class="github-link"
+         data-pt="ver todos no GitHub →"
+         data-en="view all on GitHub →">
+        ver todos no GitHub →
+      </a>
+    </div>
+  </section>
+
+  <!-- BLOG -->
+  <section id="blog">
+    <div class="wrapper">
+      <div class="section-label" data-pt="blog" data-en="blog">blog</div>
+      <div class="blog-card">
+        <div>
+          <h3 data-pt="Pensamentos sobre tecnologia, qualidade e café."
+              data-en="Thoughts on technology, quality and coffee.">
+            Pensamentos sobre tecnologia, qualidade e café.
+          </h3>
+          <p data-pt="Em breve — artigos sobre Linux, Python, processos e tudo mais que me interessa."
+             data-en="Coming soon — articles on Linux, Python, and everything I find interesting.">
+            Em breve — artigos sobre Linux, Python, processos e tudo mais que me interessa.
+          </p>
+        </div>
+        <span class="blog-arrow" aria-hidden="true">→</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTATO -->
+  <section id="contato">
+    <div class="wrapper">
+      <div class="section-label" data-pt="contato" data-en="contact">contato</div>
+      <div class="contact-grid">
+        <div class="contact-form">
+          <div class="form-group">
+            <label for="name" data-pt="nome" data-en="name">nome</label>
+            <input type="text" id="name" placeholder="Seu nome">
+          </div>
+          <div class="form-group">
+            <label for="email" data-pt="e-mail" data-en="e-mail">e-mail</label>
+            <input type="email" id="email" placeholder="seu@email.com">
+          </div>
+          <div class="form-group">
+            <label for="message" data-pt="mensagem" data-en="message">mensagem</label>
+            <textarea id="message" placeholder="Olá Renaldo..."></textarea>
+          </div>
+          <a href="mailto:renaldo@duck.com" class="btn-primary" id="btn-send"
+             data-pt="enviar mensagem" data-en="send message">enviar mensagem</a>
+        </div>
+        <div class="contact-links">
+          <div class="contact-link-item">
+            <div class="contact-link-icon">gh</div>
+            <div>
+              <div class="link-label">GitHub</div>
+              <a href="https://github.com/renaldofreire" target="_blank" rel="noopener" class="link-value">@renaldofreire</a>
+            </div>
+          </div>
+          <div class="contact-link-item">
+            <div class="contact-link-icon">in</div>
+            <div>
+              <div class="link-label">LinkedIn</div>
+              <a href="https://www.linkedin.com/renaldofreire" target="_blank" rel="noopener" class="link-value">/renaldofreire</a>
+            </div>
+          </div>
+          <div class="contact-link-item">
+            <div class="contact-link-icon">@</div>
+            <div>
+              <div class="link-label">e-mail</div>
+              <a href="mailto:renaldo@duck.com" class="link-value">renaldo@duck.com</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrapper footer-inner">
+      <div class="footer-text">
+        <span aria-hidden="true">☕</span>
+        <span data-pt="feito com Python & café — renaldo freire © 2025"
+              data-en="made with Python & coffee — renaldo freire © 2025">
+          feito com Python & café — renaldo freire © 2025
+        </span>
+      </div>
+      <div class="footer-text">Flask + Frozen-Flask</div>
+    </div>
+  </footer>
+
+  <!-- Dados dos repositórios injetados pelo Python no build -->
+  <script id="reposData" type="application/json">
+    {{ repos | tojson }}
+  </script>
+
+  <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>
