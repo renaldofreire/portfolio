@@ -7,17 +7,7 @@
     "forks": 0,
     "url": "https://github.com/renaldofreire/portfolio",
     "topics": [],
-    "updated_at": "2026-04-07T08:44:29Z"
-  },
-  {
-    "name": "renaldofreire",
-    "description": "Sobre mim.",
-    "language": "—",
-    "stars": 0,
-    "forks": 0,
-    "url": "https://github.com/renaldofreire/renaldofreire",
-    "topics": [],
-    "updated_at": "2026-04-07T06:11:36Z"
+    "updated_at": "2026-04-07T08:53:40Z"
   },
   {
     "name": "dotfiles",
@@ -48,15 +38,5 @@
     "url": "https://github.com/renaldofreire/pypacks",
     "topics": [],
     "updated_at": "2025-06-02T05:35:32Z"
-  },
-  {
-    "name": "rename-folders",
-    "description": "Rename folders simple script.",
-    "language": "Python",
-    "stars": 0,
-    "forks": 0,
-    "url": "https://github.com/renaldofreire/rename-folders",
-    "topics": [],
-    "updated_at": "2024-12-09T15:52:02Z"
   }
 ]
