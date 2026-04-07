@@ -18,4 +18,9 @@ freezer = Freezer(app)
 
 if __name__ == "__main__":
     freezer.freeze()
-    print("Site gerado em /docs — pronto para o GitHub Pages.")
+    
+    # Cria o arquivo CNAME para o domínio personalizado
+    with open("docs/CNAME", "w") as f:
+        f.write("renaldofreire.dev")
+        
+    print("Site gerado em /docs com CNAME — pronto para o GitHub Pages.")
