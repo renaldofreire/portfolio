@@ -150,22 +150,26 @@
     <div class="wrapper">
       <div class="section-label" data-pt="contato" data-en="contact">contato</div>
       <div class="contact-grid">
-        <div class="contact-form">
+        <form action="https://api.web3forms.com/submit" method="POST" class="contact-form">
+          <!-- Chave de Acesso Web3Forms -->
+          <input type="hidden" name="access_key" value="af3ccbaa-38af-402b-9d2a-15164f76469e">
+          <!-- Redirecionamento após envio (Opcional) -->
+          <input type="hidden" name="from_name" value="Portfolio Contato">
+          
           <div class="form-group">
             <label for="name" data-pt="nome" data-en="name">nome</label>
-            <input type="text" id="name" placeholder="Seu nome">
+            <input type="text" name="name" id="name" placeholder="Seu nome" required>
           </div>
           <div class="form-group">
             <label for="email" data-pt="e-mail" data-en="e-mail">e-mail</label>
-            <input type="email" id="email" placeholder="seu@email.com">
+            <input type="email" name="email" id="email" placeholder="seu@email.com" required>
           </div>
           <div class="form-group">
             <label for="message" data-pt="mensagem" data-en="message">mensagem</label>
-            <textarea id="message" placeholder="Olá Renaldo..."></textarea>
+            <textarea name="message" id="message" placeholder="Olá Renaldo..." required></textarea>
           </div>
-          <a href="mailto:renaldo@duck.com" class="btn-primary" id="btn-send"
-             data-pt="enviar mensagem" data-en="send message">enviar mensagem</a>
-        </div>
+          <button type="submit" class="btn-primary" data-pt="enviar mensagem" data-en="send message">enviar mensagem</button>
+        </form>
         <div class="contact-links">
           <div class="contact-link-item">
             <div class="contact-link-icon">gh</div>
