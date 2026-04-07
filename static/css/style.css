@@ -80,11 +80,12 @@ nav {
   color: var(--logo-color);
   font-family: 'Courier New', monospace;
   font-weight: bold;
-  letter-spacing: 0.05em;
+  letter-spacing: 0;
 }
 
 .logo-accent {
   color: var(--accent2);
+  font-weight: 900;
 }
 
 .nav-links {
@@ -167,38 +168,52 @@ nav {
 /* Xícara + fumacinha */
 .cup-wrap {
   position: relative;
-  width: 50px;
-  height: 70px;
-  margin-bottom: 2rem;
+  width: 60px;
+  height: 80px;
+  margin-bottom: 2.5rem;
 }
 
-.cup-emoji {
-  font-size: 44px;
+.cup-main-svg {
+  width: 52px;
+  height: 52px;
   position: absolute;
   bottom: 0;
   left: 0;
+  color: var(--text);
+  z-index: 2; /* Fica na frente */
 }
 
 .steam-svg {
   position: absolute;
-  top: -8px;
-  left: 16px;
+  top: 10px; /* Desce para brotar de dentro */
+  left: 14px;
   color: var(--steam-color);
   opacity: 0.7;
+  z-index: 1; /* Fica atrás */
 }
 
 .steam-path {
   stroke: currentColor;
   stroke-dasharray: 40;
   stroke-dashoffset: 40;
+  stroke-linecap: round;
+  fill: none;
+}
+
+.steam-1 {
   animation: drawSteam 2.8s ease-in-out infinite;
 }
 
+.steam-2 {
+  animation: drawSteam 2.8s ease-in-out infinite 1.4s; /* Atraso de 1.4s para intercalar */
+  opacity: 0.5;
+}
+
 @keyframes drawSteam {
-  0%   { stroke-dashoffset: 40; opacity: 0; }
-  30%  { opacity: 0.6; }
+  0%   { stroke-dashoffset: 40; opacity: 0; transform: translateY(0); }
+  20%  { opacity: 0.6; }
   70%  { stroke-dashoffset: 0;   opacity: 0.3; }
-  100% { stroke-dashoffset: -40; opacity: 0; }
+  100% { stroke-dashoffset: -40; opacity: 0; transform: translateY(-10px); }
 }
 
 .hero h1 {
@@ -598,7 +613,14 @@ footer {
   font-family: 'Courier New', monospace;
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 8px;
+}
+
+.footer-cup {
+  width: 18px;
+  height: 18px;
+  color: var(--text2);
+  opacity: 0.8;
 }
 
 
