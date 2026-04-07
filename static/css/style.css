@@ -164,12 +164,12 @@ nav {
 .cup-wrap {
   position: relative;
   width: 50px;
-  height: 68px;
-  margin-bottom: 1.2rem;
+  height: 70px;
+  margin-bottom: 2rem;
 }
 
 .cup-emoji {
-  font-size: 36px;
+  font-size: 44px;
   position: absolute;
   bottom: 0;
   left: 0;
@@ -177,32 +177,33 @@ nav {
 
 .steam-svg {
   position: absolute;
-  top: 0;
-  left: 13px;
+  top: -8px;
+  left: 16px;
   color: var(--steam-color);
+  opacity: 0.7;
 }
 
 .steam-path {
   stroke: currentColor;
   stroke-dasharray: 40;
   stroke-dashoffset: 40;
-  animation: drawSteam 2s ease-in-out infinite;
+  animation: drawSteam 2.8s ease-in-out infinite;
 }
 
 @keyframes drawSteam {
   0%   { stroke-dashoffset: 40; opacity: 0; }
-  20%  { opacity: 0.75; }
-  70%  { stroke-dashoffset: 0;   opacity: 0.4; }
+  30%  { opacity: 0.6; }
+  70%  { stroke-dashoffset: 0;   opacity: 0.3; }
   100% { stroke-dashoffset: -40; opacity: 0; }
 }
 
 .hero h1 {
-  font-size: 48px;
-  font-weight: normal;
-  line-height: 1.1;
+  font-size: 58px;
+  font-weight: 500;
+  line-height: 1.05;
   color: var(--text);
-  margin-bottom: 1rem;
-  letter-spacing: -0.01em;
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.025em;
 }
 
 .hero h1 em {
