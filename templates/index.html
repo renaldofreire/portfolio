@@ -150,26 +150,41 @@
     <div class="wrapper">
       <div class="section-label" data-pt="contato" data-en="contact">contato</div>
       <div class="contact-grid">
-        <form action="https://api.web3forms.com/submit" method="POST" class="contact-form">
-          <!-- Chave de Acesso Web3Forms -->
-          <input type="hidden" name="access_key" value="af3ccbaa-38af-402b-9d2a-15164f76469e">
-          <!-- Redirecionamento após envio (Opcional) -->
-          <input type="hidden" name="from_name" value="Portfolio Contato">
-          
-          <div class="form-group">
-            <label for="name" data-pt="nome" data-en="name">nome</label>
-            <input type="text" name="name" id="name" placeholder="Seu nome" required>
+        <div class="contact-form-container">
+          <form id="contactForm" action="https://api.web3forms.com/submit" method="POST" class="contact-form">
+            <!-- Chave de Acesso Web3Forms -->
+            <input type="hidden" name="access_key" value="SUA-CHAVE-AQUI">
+
+            <div class="form-group">
+              <label for="name" data-pt="nome" data-en="name">nome</label>
+              <input type="text" name="name" id="name" placeholder="Seu nome" required>
+            </div>
+            <div class="form-group">
+              <label for="email" data-pt="e-mail" data-en="e-mail">e-mail</label>
+              <input type="email" name="email" id="email" placeholder="seu@email.com" required>
+            </div>
+            <div class="form-group">
+              <label for="message" data-pt="mensagem" data-en="message">mensagem</label>
+              <textarea name="message" id="message" placeholder="Olá Renaldo..." required></textarea>
+            </div>
+            <button type="submit" id="submitBtn" class="btn-primary" data-pt="enviar mensagem" data-en="send message">enviar mensagem</button>
+          </form>
+
+          <!-- Mensagem de Sucesso (Oculta por padrão) -->
+          <div id="formResponse" style="display:none; text-align:center; padding: 2rem 0;">
+            <div style="font-size: 40px; margin-bottom: 1rem;">☕</div>
+            <h3 data-pt="Mensagem enviada!" data-en="Message sent!">Mensagem enviada!</h3>
+            <p style="font-size: 13px; color: var(--text2); margin-top: 0.5rem;" 
+               data-pt="Obrigado pelo contato. Responderei em breve." 
+               data-en="Thanks for reaching out. I'll get back to you soon.">
+               Obrigado pelo contato. Responderei em breve.
+            </p>
+            <button onclick="resetForm()" class="github-link" style="background:none; border:none; cursor:pointer; margin-top: 1.5rem;"
+                    data-pt="← enviar outra" data-en="← send another">
+              ← enviar outra
+            </button>
           </div>
-          <div class="form-group">
-            <label for="email" data-pt="e-mail" data-en="e-mail">e-mail</label>
-            <input type="email" name="email" id="email" placeholder="seu@email.com" required>
-          </div>
-          <div class="form-group">
-            <label for="message" data-pt="mensagem" data-en="message">mensagem</label>
-            <textarea name="message" id="message" placeholder="Olá Renaldo..." required></textarea>
-          </div>
-          <button type="submit" class="btn-primary" data-pt="enviar mensagem" data-en="send message">enviar mensagem</button>
-        </form>
+        </div>
         <div class="contact-links">
           <div class="contact-link-item">
             <div class="contact-link-icon">gh</div>
