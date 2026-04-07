@@ -1,4 +1,4 @@
-# renaldo.dev — Portfolio
+# renaldofreire.dev — Portfolio
 
 Portfolio pessoal construído com **Flask + Frozen-Flask**, deployado no **GitHub Pages** via GitHub Actions.
 
