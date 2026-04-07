@@ -150,22 +150,26 @@
     <div class="wrapper">
       <div class="section-label" data-pt="contato" data-en="contact">contato</div>
       <div class="contact-grid">
-        <div class="contact-form">
+        <form action="https://api.web3forms.com/submit" method="POST" class="contact-form">
+          <!-- Chave de Acesso Web3Forms -->
+          <input type="hidden" name="access_key" value="af3ccbaa-38af-402b-9d2a-15164f76469e">
+          <!-- Redirecionamento após envio (Opcional) -->
+          <input type="hidden" name="from_name" value="Portfolio Contato">
+          
           <div class="form-group">
             <label for="name" data-pt="nome" data-en="name">nome</label>
-            <input type="text" id="name" placeholder="Seu nome">
+            <input type="text" name="name" id="name" placeholder="Seu nome" required>
           </div>
           <div class="form-group">
             <label for="email" data-pt="e-mail" data-en="e-mail">e-mail</label>
-            <input type="email" id="email" placeholder="seu@email.com">
+            <input type="email" name="email" id="email" placeholder="seu@email.com" required>
           </div>
           <div class="form-group">
             <label for="message" data-pt="mensagem" data-en="message">mensagem</label>
-            <textarea id="message" placeholder="Olá Renaldo..."></textarea>
+            <textarea name="message" id="message" placeholder="Olá Renaldo..." required></textarea>
           </div>
-          <a href="mailto:renaldo@duck.com" class="btn-primary" id="btn-send"
-             data-pt="enviar mensagem" data-en="send message">enviar mensagem</a>
-        </div>
+          <button type="submit" class="btn-primary" data-pt="enviar mensagem" data-en="send message">enviar mensagem</button>
+        </form>
         <div class="contact-links">
           <div class="contact-link-item">
             <div class="contact-link-icon">gh</div>
@@ -208,7 +212,7 @@
 
   <!-- Dados dos repositórios injetados pelo Python no build -->
   <script id="reposData" type="application/json">
-    [{"description": "my new portfolio", "forks": 0, "language": "CSS", "name": "portfolio", "stars": 0, "topics": [], "updated_at": "2026-04-07T07:57:17Z", "url": "https://github.com/renaldofreire/portfolio"}, {"description": "Sobre mim.", "forks": 0, "language": "\u2014", "name": "renaldofreire", "stars": 0, "topics": [], "updated_at": "2026-04-07T06:11:36Z", "url": "https://github.com/renaldofreire/renaldofreire"}, {"description": "my dotfile config", "forks": 0, "language": "Python", "name": "dotfiles", "stars": 0, "topics": [], "updated_at": "2026-03-30T01:53:46Z", "url": "https://github.com/renaldofreire/dotfiles"}, {"description": "Personal learning journal for the Python Programming MOOC 2026 offered by the University of Helsinki. This repository tracks my progress, exercises, and notes across all 14 parts of the course.", "forks": 0, "language": "Python", "name": "python_MOOC_2026", "stars": 0, "topics": [], "updated_at": "2026-02-26T04:50:33Z", "url": "https://github.com/renaldofreire/python_MOOC_2026"}, {"description": "List my packages", "forks": 0, "language": "Python", "name": "pypacks", "stars": 0, "topics": [], "updated_at": "2025-06-02T05:35:32Z", "url": "https://github.com/renaldofreire/pypacks"}, {"description": "Rename folders simple script.", "forks": 0, "language": "Python", "name": "rename-folders", "stars": 0, "topics": [], "updated_at": "2024-12-09T15:52:02Z", "url": "https://github.com/renaldofreire/rename-folders"}]
+    [{"description": "my new portfolio", "forks": 0, "language": "CSS", "name": "portfolio", "stars": 0, "topics": [], "updated_at": "2026-04-07T08:16:34Z", "url": "https://github.com/renaldofreire/portfolio"}, {"description": "Sobre mim.", "forks": 0, "language": "\u2014", "name": "renaldofreire", "stars": 0, "topics": [], "updated_at": "2026-04-07T06:11:36Z", "url": "https://github.com/renaldofreire/renaldofreire"}, {"description": "my dotfile config", "forks": 0, "language": "Python", "name": "dotfiles", "stars": 0, "topics": [], "updated_at": "2026-03-30T01:53:46Z", "url": "https://github.com/renaldofreire/dotfiles"}, {"description": "Personal learning journal for the Python Programming MOOC 2026 offered by the University of Helsinki. This repository tracks my progress, exercises, and notes across all 14 parts of the course.", "forks": 0, "language": "Python", "name": "python_MOOC_2026", "stars": 0, "topics": [], "updated_at": "2026-02-26T04:50:33Z", "url": "https://github.com/renaldofreire/python_MOOC_2026"}, {"description": "List my packages", "forks": 0, "language": "Python", "name": "pypacks", "stars": 0, "topics": [], "updated_at": "2025-06-02T05:35:32Z", "url": "https://github.com/renaldofreire/pypacks"}, {"description": "Rename folders simple script.", "forks": 0, "language": "Python", "name": "rename-folders", "stars": 0, "topics": [], "updated_at": "2024-12-09T15:52:02Z", "url": "https://github.com/renaldofreire/rename-folders"}]
   </script>
 
   <script src="static/js/main.js"></script>

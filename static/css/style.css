@@ -238,7 +238,7 @@ nav {
   display: inline-block;
   background: var(--btn-bg);
   color: var(--btn-text);
-  border: 1px solid var(--btn-bg);
+  border: none;
   padding: 10px 24px;
   font-size: 13px;
   cursor: pointer;
