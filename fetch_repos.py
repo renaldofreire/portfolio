@@ -18,11 +18,15 @@ GITHUB_USERNAME = "renaldofreire"
 API_URL = f"https://api.github.com/users/{GITHUB_USERNAME}/repos"
 OUTPUT_FILE = os.path.join("static", "data", "repos.json")
 
-# Repositórios a excluir do portfolio (forks, configs, etc.)
-EXCLUDE = set()
+# Repositórios a excluir do portfolio (nomes exatos no GitHub)
+EXCLUDE = {
+    "config-repo",
+    "teste",
+    "renaldofreire"
+}
 
-# Quantos repositórios exibir no máximo
-MAX_REPOS = 6
+# Quantos repositórios exibir no máximo na grade do site
+MAX_REPOS = 4
 
 
 def fetch_repos():
