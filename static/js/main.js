@@ -38,8 +38,14 @@ function applyLang(lang) {
     btn.innerHTML = lang === "pt" ? "🇬🇧" : "🇧🇷";
   }
 
+  // Traduz textos normais
   document.querySelectorAll("[data-pt][data-en]").forEach((el) => {
     el.innerHTML = el.dataset[lang];
+  });
+
+  // Traduz placeholders
+  document.querySelectorAll("[data-pt-placeholder][data-en-placeholder]").forEach((el) => {
+    el.placeholder = el.getAttribute(`data-${lang}-placeholder`);
   });
 }
 
