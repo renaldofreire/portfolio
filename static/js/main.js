@@ -147,4 +147,65 @@ function renderPlaceholders() {
   `;
 }
 
+/* ============================================================
+   CONTATO — Envio AJAX via Web3Forms
+   ============================================================ */
+const contactForm = document.getElementById("contactForm");
+const formResponse = document.getElementById("formResponse");
+
+if (contactForm) {
+  contactForm.addEventListener("submit", function (e) {
+    e.preventDefault();
+    const btn = document.getElementById("submitBtn");
+    const originalTxt = btn.innerHTML;
+
+    // Feedback visual imediato
+    btn.innerHTML = currentLang === "pt" ? "enviando..." : "sending...";
+    btn.disabled = true;
+
+    const formData = new FormData(contactForm);
+    const object = Object.fromEntries(formData);
+    const json = JSON.stringify(object);
+
+    fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: json,
+    })
+      .then(async (response) => {
+        let res = await response.json();
+        if (response.status == 200) {
+          // Sucesso
+          contactForm.style.display = "none";
+          formResponse.style.display = "block";
+        } else {
+          // Erro da API
+          console.log(response);
+          alert(res.message);
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+        alert(currentLang === "pt" ? "Ocorreu um erro no envio." : "Error sending message.");
+      })
+      .then(function () {
+        btn.innerHTML = originalTxt;
+        btn.disabled = false;
+      });
+  });
+}
+
+function resetForm() {
+  const contactForm = document.getElementById("contactForm");
+  const formResponse = document.getElementById("formResponse");
+  if (contactForm && formResponse) {
+    contactForm.reset();
+    contactForm.style.display = "block";
+    formResponse.style.display = "none";
+  }
+}
+
 document.addEventListener("DOMContentLoaded", renderProjects);
