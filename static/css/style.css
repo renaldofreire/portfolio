@@ -121,6 +121,9 @@ nav {
   font-family: 'Courier New', monospace;
   letter-spacing: 0.05em;
   transition: background 0.15s, color 0.15s;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
 }
 
 .ctrl-btn:hover {
