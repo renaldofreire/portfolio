@@ -1,13 +1,23 @@
 [
   {
-    "name": "portfolio",
-    "description": "my new portfolio",
-    "language": "HTML",
+    "name": "pypacks",
+    "description": "List my packages",
+    "language": "Python",
     "stars": 0,
     "forks": 0,
-    "url": "https://github.com/renaldofreire/portfolio",
+    "url": "https://github.com/renaldofreire/pypacks",
     "topics": [],
-    "updated_at": "2026-04-07T10:12:43Z"
+    "updated_at": "2026-04-13T06:20:40Z"
+  },
+  {
+    "name": "my_dashboard",
+    "description": "Personal dashboard",
+    "language": "Python",
+    "stars": 0,
+    "forks": 0,
+    "url": "https://github.com/renaldofreire/my_dashboard",
+    "topics": [],
+    "updated_at": "2026-04-13T06:08:44Z"
   },
   {
     "name": "dotfiles",
@@ -17,26 +27,16 @@
     "forks": 0,
     "url": "https://github.com/renaldofreire/dotfiles",
     "topics": [],
-    "updated_at": "2026-03-30T01:53:46Z"
+    "updated_at": "2026-04-12T10:14:38Z"
   },
   {
-    "name": "python_MOOC_2026",
-    "description": "Personal learning journal for the Python Programming MOOC 2026 offered by the University of Helsinki. This repository tracks my progress, exercises, and notes across all 14 parts of the course.",
-    "language": "Python",
+    "name": "portfolio",
+    "description": "my new portfolio",
+    "language": "HTML",
     "stars": 0,
     "forks": 0,
-    "url": "https://github.com/renaldofreire/python_MOOC_2026",
+    "url": "https://github.com/renaldofreire/portfolio",
     "topics": [],
-    "updated_at": "2026-02-26T04:50:33Z"
-  },
-  {
-    "name": "pypacks",
-    "description": "List my packages",
-    "language": "Python",
-    "stars": 0,
-    "forks": 0,
-    "url": "https://github.com/renaldofreire/pypacks",
-    "topics": [],
-    "updated_at": "2025-06-02T05:35:32Z"
+    "updated_at": "2026-04-07T10:12:43Z"
   }
 ]
