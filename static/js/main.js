@@ -5,8 +5,16 @@ const THEME_KEY = "rf-theme";
 
 function applyTheme(dark) {
   document.body.classList.toggle("dark", dark);
-  const btn = document.getElementById("themeBtn");
-  if (btn) btn.innerHTML = dark ? "☀️" : "🌙";
+  const themeIcon = document.getElementById("themeIcon");
+  if (themeIcon) {
+    if (dark) {
+      // Ícone de Sol para mudar para o claro
+      themeIcon.innerHTML = `<circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>`;
+    } else {
+      // Ícone de Lua para mudar para o escuro
+      themeIcon.innerHTML = `<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>`;
+    }
+  }
 }
 
 function toggleTheme() {
@@ -32,10 +40,10 @@ let currentLang = "pt";
 function applyLang(lang) {
   currentLang = lang;
   document.documentElement.lang = lang === "pt" ? "pt-BR" : "en";
-  const btn = document.getElementById("langBtn");
-  if (btn) {
-    // Mostra apenas a bandeira do idioma para o qual o usuário pode mudar
-    btn.innerHTML = lang === "pt" ? "🇬🇧" : "🇧🇷";
+  const langText = document.getElementById("langText");
+  if (langText) {
+    // Mostra o texto do idioma para o qual o usuário pode mudar
+    langText.innerHTML = lang === "pt" ? "EN" : "PT";
   }
 
   // Traduz textos normais

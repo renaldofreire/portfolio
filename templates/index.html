@@ -20,8 +20,19 @@
         <a href="#contato" data-pt="contato"  data-en="contact">contato</a>
       </div>
       <div class="nav-controls">
-        <button class="ctrl-btn" id="langBtn" onclick="toggleLang()" aria-label="Alternar idioma">EN</button>
-        <button class="ctrl-btn" id="themeBtn" onclick="toggleTheme()" aria-label="Alternar tema">◐ escuro</button>
+        <button class="ctrl-btn" id="langBtn" onclick="toggleLang()" aria-label="Alternar idioma">
+          <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"></circle>
+            <line x1="2" y1="12" x2="22" y2="12"></line>
+            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+          </svg>
+          <span id="langText">EN</span>
+        </button>
+        <button class="ctrl-btn" id="themeBtn" onclick="toggleTheme()" aria-label="Alternar tema">
+          <svg class="icon-svg" id="themeIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <!-- O conteúdo será injetado pelo JavaScript -->
+          </svg>
+        </button>
       </div>
     </div>
   </nav>
