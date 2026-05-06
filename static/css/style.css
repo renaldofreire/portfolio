@@ -4,37 +4,37 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  --bg:        #F5F0E8;
-  --bg2:       #EDE6D6;
-  --bg3:       #E2D9C5;
-  --text:      #2C1810;
-  --text2:     #7A5C50;
-  --accent:    #6B3A2A;
-  --accent2:   #8B5A42;
-  --border:    rgba(107, 58, 42, 0.2);
-  --tag-bg:    #D9C9B5;
-  --tag-text:  #3D1F14;
-  --btn-bg:    #3D1F14;
-  --btn-text:  #F5EDE0;
-  --steam-color: #8B5A42;
-  --logo-color: #3D1F14;
+  --bg:        #F8F5F0;
+  --bg2:       #F1EBE0;
+  --bg3:       #EAE1D1;
+  --text:      #322824;
+  --text2:     #6B5D57;
+  --accent:    #5D4037;
+  --accent2:   #7D675E;
+  --border:    rgba(93, 64, 55, 0.15);
+  --tag-bg:    #E2D9C5;
+  --tag-text:  #4A3B35;
+  --btn-bg:    #322824;
+  --btn-text:  #F8F5F0;
+  --steam-color: #7D675E;
+  --logo-color: #322824;
 }
 
 body.dark {
-  --bg:        #0A0A0A;
-  --bg2:       #141414;
-  --bg3:       #1C1C1C;
-  --text:      #EFEFEF;
-  --text2:     #666666;
-  --accent:    #DEDEDE;
-  --accent2:   #AAAAAA;
-  --border:    rgba(255, 255, 255, 0.1);
-  --tag-bg:    #252525;
-  --tag-text:  #CCCCCC;
-  --btn-bg:    #EFEFEF;
-  --btn-text:  #0A0A0A;
-  --steam-color: #888888;
-  --logo-color: #B08C71;
+  --bg:        #12100E;
+  --bg2:       #1A1715;
+  --bg3:       #24211E;
+  --text:      #E0DCD9;
+  --text2:     #8C8581;
+  --accent:    #D1C7C2;
+  --accent2:   #A89B95;
+  --border:    rgba(255, 255, 255, 0.08);
+  --tag-bg:    #24211E;
+  --tag-text:  #B5ADA9;
+  --btn-bg:    #E0DCD9;
+  --btn-text:  #12100E;
+  --steam-color: #8C8581;
+  --logo-color: #D1B8A4;
 }
 
 html { scroll-behavior: smooth; }
@@ -105,7 +105,7 @@ nav {
 
 .nav-controls { 
   display: flex; 
-  gap: 10px; 
+  gap: 12px; 
   align-items: center;
 }
 
@@ -113,27 +113,38 @@ nav {
   background: transparent;
   border: none;
   color: var(--text2);
-  padding: 4px;
-  font-size: 16px;
+  padding: 6px;
+  font-size: 14px;
   cursor: pointer;
-  font-family: inherit;
-  transition: color 0.2s, opacity 0.2s;
+  font-family: 'Courier New', monospace;
+  transition: all 0.2s ease;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  opacity: 0.8;
+  gap: 6px;
+  border-radius: 4px;
 }
 
 .ctrl-btn:hover {
-  background: transparent;
+  background: var(--bg2);
   color: var(--text);
-  opacity: 1;
 }
 
-#langBtn {
-  font-size: 14px;
-  font-family: 'Courier New', monospace;
+.icon-svg {
+  width: 18px;
+  height: 18px;
+  stroke: currentColor;
+  stroke-width: 1.5;
+  transition: transform 0.3s ease;
+}
+
+#themeBtn:hover .icon-svg {
+  transform: rotate(15deg);
+}
+
+#langText {
   font-weight: bold;
+  font-size: 12px;
 }
 
 
