@@ -55,6 +55,10 @@ function applyLang(lang) {
   document.querySelectorAll("[data-pt-placeholder][data-en-placeholder]").forEach((el) => {
     el.placeholder = el.getAttribute(`data-${lang}-placeholder`);
   });
+
+  // Atualiza listas do blog se estiverem presentes na página
+  if (typeof filterPosts === "function") filterPosts();
+  if (typeof filterMiniPosts === "function") filterMiniPosts();
 }
 
 function toggleLang() {

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How this blog (almost) created itself — Renaldo Freire</title>
+    <link rel="stylesheet" href="../../static/css/style.css">
+    <link rel="stylesheet" href="../../static/css/pygments.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>☕</text></svg>">
+</head>
+<body class="blog-post">
+
+    <nav>
+        <div class="wrapper nav-inner">
+            <a href="../../index.html" class="logo">renaldofreire<span class="logo-accent">.</span>dev</a>
+            <div class="nav-links">
+                <a href="../index.html" data-pt="← voltar ao blog" data-en="← back to blog">← voltar ao blog</a>
+            </div>
+            <div class="nav-controls">
+                <button class="ctrl-btn" id="langBtn" onclick="toggleLang()" aria-label="Alternar idioma">
+                    <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <line x1="2" y1="12" x2="22" y2="12"></line>
+                        <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                    </svg>
+                    <span id="langText">EN</span>
+                </button>
+                <button class="ctrl-btn" id="themeBtn" onclick="toggleTheme()" aria-label="Alternar tema">
+                    <svg class="icon-svg" id="themeIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <article class="wrapper" style="padding: 5rem 1.5rem;">
+        
+        <div style="margin-bottom: 2rem; padding: 1rem; background: var(--bg2); border-radius: 4px; border-left: 3px solid var(--accent2); font-family: 'Courier New', monospace; font-size: 13px;">
+            
+            <span>🇧🇷 Este post também está disponível em </span>
+            <a href="../meu-primeiro-post/index.html" 
+               onclick="localStorage.setItem('rf-lang', 'pt')"
+               style="color: var(--accent2); text-decoration: underline;">Português</a>.
+            
+        </div>
+        
+
+        <header style="margin-bottom: 4rem;">
+            <span class="tag" style="margin-bottom: 1rem; display: inline-block;">2026-05-25</span>
+            <h1 style="font-size: 48px; line-height: 1.1; margin-bottom: 1.5rem;">How this blog (almost) created itself</h1>
+            <p style="font-size: 18px; color: var(--text2); font-family: 'Courier New', monospace;">What&#39;s necessary to have a simple blog using Python, coffee, and stubbornness.</p>
+        </header>
+
+        <div class="post-content">
+            <h1>The birth of a blog (or: Why didn't I use WordPress?)</h1>
+<p>If you're reading this, congratulations! It means the tangle of Python scripts I call a "build system" actually worked and didn't blow up my computer.</p>
+<p>Many people would ask: <em>"Renaldo, why on earth didn't you use WordPress or Medium?"</em>. The answer is simple: because I like to suffer (and to have total control over every pixel and every line of code). </p>
+<p>Here's the recipe for what makes this blog run while I drink my coffee:</p>
+<h3>The Holy Trinity of my Setup:</h3>
+<ol>
+<li>
+<p><strong>Flask + Flask-FlatPages:</strong> 
+    Flask is like that Swiss Army knife I use for everything. FlatPages is the magic that takes dull Markdown files and turns them into elegant HTML pages. No database, no complication, no drama.</p>
+</li>
+<li>
+<p><strong>Markdown:</strong> 
+    I write in plain text, Python does the heavy lifting, and the result is clean HTML. It's the closest thing to "programming" text I know.</p>
+</li>
+<li>
+<p><strong>Frozen-Flask:</strong> 
+    This one is the genie in the lamp. It takes all the dynamism of Flask and "freezes" it into static files. The result? A site that flies, is secure by nature, and lives for free on GitHub Pages.</p>
+</li>
+</ol>
+<h3>The "Master Chef" behind it all</h3>
+<p>The real hero here is <strong>GitHub Actions</strong>. Every time I <code>git push</code> a new post, a robot somewhere in the world wakes up, runs my Python scripts, cleans up the mess, and publishes the site. I only need to worry about writing (and not letting the coffee get cold).</p>
+<h3>Code example (because a dev blog must have code):</h3>
+<p>Just to make sure the syntax highlighting is working and looking great:</p>
+<div class="codehilite"><pre><span></span><code><span class="k">def</span> <span class="nf">morning_routine</span><span class="p">(</span><span class="n">coffee_available</span><span class="p">:</span> <span class="nb">bool</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">coffee_available</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;☕ Starting blog deploy...&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="s2">&quot;World conquered!&quot;</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s2">&quot;Critical Error: Caffeine not found.&quot;</span><span class="p">)</span>
+
+<span class="c1"># Spoiler: coffee is always available.</span>
+</code></pre></div>
+
+<p>I hope you enjoy the next posts. Soon I will talk about Linux, Homelab, Open Source, and other geeky stuff.</p>
+<p>See you next time!</p>
+        </div>
+
+        <footer style="margin-top: 5rem; padding-top: 2rem; border-top: 0.5px solid var(--border);">
+            <a href="../index.html" class="github-link">← Ver todos os artigos</a>
+        </footer>
+    </article>
+
+    <script src="../../static/js/main.js"></script>
+</body>
+</html>

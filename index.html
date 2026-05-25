@@ -147,16 +147,46 @@
       <div class="section-label" data-pt="blog" data-en="blog">blog</div>
       <div class="blog-list-mini">
         
-        <div class="blog-card" style="margin-bottom: 1.5rem; padding: 1.5rem; cursor: pointer;" onclick="location.href='blog/meu-primeiro-post/index.html'">
+        <div class="blog-card post-item-mini" 
+             data-lang="en"
+             style="margin-bottom: 1.5rem; padding: 1.5rem; cursor: pointer;" 
+             onclick="location.href='blog/meu-primeiro-post.en/index.html'">
+          <div>
+            <span class="tag" style="font-size: 10px; margin-bottom: 0.5rem; display: inline-block;">2026-05-25</span>
+            <h3 style="font-size: 18px;">How this blog (almost) created itself</h3>
+            <p style="font-size: 12px; margin-top: 0.5rem; opacity: 0.8;">What&#39;s necessary to have a simple blog using Python, coffee, and stubbornness.</p>
+          </div>
+          <span class="blog-arrow" aria-hidden="true">→</span>
+        </div>
+        
+        <div class="blog-card post-item-mini" 
+             data-lang="pt"
+             style="margin-bottom: 1.5rem; padding: 1.5rem; cursor: pointer;" 
+             onclick="location.href='blog/meu-primeiro-post/index.html'">
           <div>
             <span class="tag" style="font-size: 10px; margin-bottom: 0.5rem; display: inline-block;">2026-05-25</span>
             <h3 style="font-size: 18px;">Como este blog (quase) se criou sozinho</h3>
-            <p style="font-size: 12px; margin-top: 0.5rem; opacity: 0.8;">Um mergulho no &#34;overengineering&#34; necessário para ter um blog simples usando Python, café e teimosia.</p>
+            <p style="font-size: 12px; margin-top: 0.5rem; opacity: 0.8;">O necessário para se ter um blog simples usando Python, café e teimosia.</p>
           </div>
           <span class="blog-arrow" aria-hidden="true">→</span>
         </div>
         
       </div>
+      <script>
+        function filterMiniPosts() {
+            const lang = localStorage.getItem("rf-lang") || "pt";
+            let count = 0;
+            document.querySelectorAll('.post-item-mini').forEach(el => {
+                if (el.dataset.lang === lang && count < 3) {
+                    el.style.display = 'flex';
+                    count++;
+                } else {
+                    el.style.display = 'none';
+                }
+            });
+        }
+        document.addEventListener("DOMContentLoaded", filterMiniPosts);
+      </script>
       <div style="margin-top: 2rem;">
         <a href="blog/index.html" class="github-link" data-pt="ver blog completo →" data-en="view full blog →">
           ver blog completo →
@@ -270,7 +300,7 @@
 
   <!-- Dados dos repositórios injetados pelo Python no build -->
   <script id="reposData" type="application/json">
-    [{"description": "my new portfolio", "forks": 0, "language": "CSS", "name": "portfolio", "stars": 0, "topics": [], "updated_at": "2026-05-25T06:23:36Z", "url": "https://github.com/renaldofreire/portfolio"}, {"description": "my dotfile config", "forks": 0, "language": "Lua", "name": "dotfiles", "stars": 0, "topics": [], "updated_at": "2026-05-10T07:21:05Z", "url": "https://github.com/renaldofreire/dotfiles"}, {"description": "Personal dashboard", "forks": 0, "language": "Python", "name": "my_dashboard", "stars": 0, "topics": [], "updated_at": "2026-05-08T13:07:12Z", "url": "https://github.com/renaldofreire/my_dashboard"}, {"description": "List my packages", "forks": 0, "language": "Python", "name": "pypacks", "stars": 0, "topics": [], "updated_at": "2026-04-13T06:20:40Z", "url": "https://github.com/renaldofreire/pypacks"}]
+    [{"description": "my new portfolio", "forks": 0, "language": "HTML", "name": "portfolio", "stars": 0, "topics": [], "updated_at": "2026-05-25T06:46:59Z", "url": "https://github.com/renaldofreire/portfolio"}, {"description": "my dotfile config", "forks": 0, "language": "Lua", "name": "dotfiles", "stars": 0, "topics": [], "updated_at": "2026-05-10T07:21:05Z", "url": "https://github.com/renaldofreire/dotfiles"}, {"description": "Personal dashboard", "forks": 0, "language": "Python", "name": "my_dashboard", "stars": 0, "topics": [], "updated_at": "2026-05-08T13:07:12Z", "url": "https://github.com/renaldofreire/my_dashboard"}, {"description": "List my packages", "forks": 0, "language": "Python", "name": "pypacks", "stars": 0, "topics": [], "updated_at": "2026-04-13T06:20:40Z", "url": "https://github.com/renaldofreire/pypacks"}]
   </script>
 
   <script src="static/js/main.js"></script>
