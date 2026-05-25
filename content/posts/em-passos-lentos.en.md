@@ -4,7 +4,6 @@ lang: en
 description: The challenge (and the ego blow) of running in Zone 2.
 tags: [running, health, lifestyle]
 
-# In slow but steady steps
 ### The Challenge of Running in Zone 2
 
 Have you ever caught yourself trying to hide the reduced speed of your pace while an elderly lady running late overtakes you? If so, welcome to the Zone 2 club. That magical intensity range that promises miraculous transformations in your performance, but also threatens the integrity of your ego.
