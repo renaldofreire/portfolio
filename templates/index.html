@@ -147,7 +147,10 @@
       <div class="section-label" data-pt="blog" data-en="blog">blog</div>
       <div class="blog-list-mini">
         {% for post in latest_posts %}
-        <div class="blog-card" style="margin-bottom: 1.5rem; padding: 1.5rem; cursor: pointer;" onclick="location.href='{{ url_for('post', path=post.path.replace('posts/', '')) }}'">
+        <div class="blog-card post-item-mini" 
+             data-lang="{{ post.meta.lang or 'pt' }}"
+             style="margin-bottom: 1.5rem; padding: 1.5rem; cursor: pointer;" 
+             onclick="location.href='{{ url_for('post', path=post.path.replace('posts/', '')) }}'">
           <div>
             <span class="tag" style="font-size: 10px; margin-bottom: 0.5rem; display: inline-block;">{{ post.meta.date }}</span>
             <h3 style="font-size: 18px;">{{ post.meta.title }}</h3>
@@ -157,6 +160,21 @@
         </div>
         {% endfor %}
       </div>
+      <script>
+        function filterMiniPosts() {
+            const lang = localStorage.getItem("rf-lang") || "pt";
+            let count = 0;
+            document.querySelectorAll('.post-item-mini').forEach(el => {
+                if (el.dataset.lang === lang && count < 3) {
+                    el.style.display = 'flex';
+                    count++;
+                } else {
+                    el.style.display = 'none';
+                }
+            });
+        }
+        document.addEventListener("DOMContentLoaded", filterMiniPosts);
+      </script>
       <div style="margin-top: 2rem;">
         <a href="{{ url_for('blog') }}" class="github-link" data-pt="ver blog completo →" data-en="view full blog →">
           ver blog completo →

@@ -1,6 +1,7 @@
 title: Como este blog (quase) se criou sozinho
 date: 2026-05-25
-description: Um mergulho no "overengineering" necessário para ter um blog simples usando Python, café e teimosia.
+lang: pt
+description: O necessário para se ter um blog simples usando Python, café e teimosia.
 tags: [python, dev, gambiarras-do-bem]
 
 # O nascimento de um blog (ou: Por que não usei WordPress?)
@@ -40,6 +41,6 @@ def rotina_matinal(cafe_disponivel: bool):
 # Spoiler: o café sempre está disponível.
 ```
 
-Espero que gostem dos próximos posts. Vou tentar falar de Linux, Homelab e outras nerdices, sempre tentando manter o humor (ou o que restou dele depois de debugar CSS).
+Espero que gostem dos próximos posts. Embreve falarei de Linux, Homelab, Software Livre outras nerdices.
 
 Até a próxima!

@@ -14,12 +14,20 @@
         <div class="wrapper nav-inner">
             <a href="{{ url_for('index') }}" class="logo">renaldofreire<span class="logo-accent">.</span>dev</a>
             <div class="nav-links">
-                <a href="{{ url_for('index') }}#sobre">sobre</a>
-                <a href="{{ url_for('index') }}#projetos">projetos</a>
-                <a href="{{ url_for('blog') }}">blog</a>
-                <a href="{{ url_for('index') }}#contato">contato</a>
+                <a href="{{ url_for('index') }}#sobre"    data-pt="sobre"    data-en="about">sobre</a>
+                <a href="{{ url_for('index') }}#projetos" data-pt="projetos" data-en="projects">projetos</a>
+                <a href="{{ url_for('blog') }}"           data-pt="blog"     data-en="blog">blog</a>
+                <a href="{{ url_for('index') }}#contato"  data-pt="contato"  data-en="contact">contato</a>
             </div>
             <div class="nav-controls">
+                <button class="ctrl-btn" id="langBtn" onclick="toggleLang()" aria-label="Alternar idioma">
+                    <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <line x1="2" y1="12" x2="22" y2="12"></line>
+                        <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                    </svg>
+                    <span id="langText">EN</span>
+                </button>
                 <button class="ctrl-btn" id="themeBtn" onclick="toggleTheme()" aria-label="Alternar tema">
                     <svg class="icon-svg" id="themeIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></svg>
                 </button>
@@ -28,12 +36,19 @@
     </nav>
 
     <main class="wrapper" style="padding: 4rem 1.5rem;">
-        <div class="section-label">blog</div>
-        <h1 style="font-size: 42px; margin-bottom: 3rem;">Artigos & <em>Devaneios</em></h1>
+        <div class="section-label" data-pt="blog" data-en="blog">blog</div>
+        <h1 style="font-size: 42px; margin-bottom: 3rem;" 
+            data-pt="Artigos & <em>Devaneios</em>" 
+            data-en="Articles & <em>Ramblings</em>">
+            Artigos & <em>Devaneios</em>
+        </h1>
 
         <div class="blog-list">
             {% for post in posts %}
-            <article class="blog-card" style="margin-bottom: 2rem; cursor: pointer;" onclick="location.href='{{ url_for('post', path=post.path.replace('posts/', '')) }}'">
+            <article class="blog-card post-item" 
+                     data-lang="{{ post.meta.lang or 'pt' }}"
+                     style="margin-bottom: 2rem; cursor: pointer;" 
+                     onclick="location.href='{{ url_for('post', path=post.path.replace('posts/', '')) }}'">
                 <div style="flex: 1;">
                     <span class="tag" style="margin-bottom: 0.5rem; display: inline-block;">{{ post.meta.date }}</span>
                     <h2 style="font-size: 24px; font-weight: normal; margin-bottom: 0.5rem;">{{ post.meta.title }}</h2>
@@ -46,6 +61,18 @@
             {% endfor %}
         </div>
     </main>
+
+    <script>
+        // Filtra os posts baseado no idioma salvo
+        function filterPosts() {
+            const lang = localStorage.getItem("rf-lang") || "pt";
+            document.querySelectorAll('.post-item').forEach(el => {
+                el.style.display = el.dataset.lang === lang ? 'flex' : 'none';
+            });
+        }
+        document.addEventListener("DOMContentLoaded", filterPosts);
+        // Ouve mudanças de idioma do main.js se necessário (opcional)
+    </script>
 
     <footer>
         <div class="wrapper footer-inner">
