@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ post.meta.title }} — Renaldo Freire</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/pygments.css') }}">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>☕</text></svg>">
+</head>
+<body class="blog-post">
+
+    <nav>
+        <div class="wrapper nav-inner">
+            <a href="{{ url_for('index') }}" class="logo">renaldofreire<span class="logo-accent">.</span>dev</a>
+            <div class="nav-links">
+                <a href="{{ url_for('blog') }}">← voltar ao blog</a>
+            </div>
+            <div class="nav-controls">
+                <button class="ctrl-btn" id="themeBtn" onclick="toggleTheme()" aria-label="Alternar tema">
+                    <svg class="icon-svg" id="themeIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <article class="wrapper" style="padding: 5rem 1.5rem;">
+        <header style="margin-bottom: 4rem;">
+            <span class="tag" style="margin-bottom: 1rem; display: inline-block;">{{ post.meta.date }}</span>
+            <h1 style="font-size: 48px; line-height: 1.1; margin-bottom: 1.5rem;">{{ post.meta.title }}</h1>
+            <p style="font-size: 18px; color: var(--text2); font-family: 'Courier New', monospace;">{{ post.meta.description }}</p>
+        </header>
+
+        <div class="post-content">
+            {{ post.html | safe }}
+        </div>
+
+        <footer style="margin-top: 5rem; padding-top: 2rem; border-top: 0.5px solid var(--border);">
+            <a href="{{ url_for('blog') }}" class="github-link">← Ver todos os artigos</a>
+        </footer>
+    </article>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>

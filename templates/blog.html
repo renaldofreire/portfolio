@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog — Renaldo Freire</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/pygments.css') }}">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>☕</text></svg>">
+</head>
+<body class="blog-page">
+
+    <nav>
+        <div class="wrapper nav-inner">
+            <a href="{{ url_for('index') }}" class="logo">renaldofreire<span class="logo-accent">.</span>dev</a>
+            <div class="nav-links">
+                <a href="{{ url_for('index') }}#sobre">sobre</a>
+                <a href="{{ url_for('index') }}#projetos">projetos</a>
+                <a href="{{ url_for('blog') }}">blog</a>
+                <a href="{{ url_for('index') }}#contato">contato</a>
+            </div>
+            <div class="nav-controls">
+                <button class="ctrl-btn" id="themeBtn" onclick="toggleTheme()" aria-label="Alternar tema">
+                    <svg class="icon-svg" id="themeIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="wrapper" style="padding: 4rem 1.5rem;">
+        <div class="section-label">blog</div>
+        <h1 style="font-size: 42px; margin-bottom: 3rem;">Artigos & <em>Devaneios</em></h1>
+
+        <div class="blog-list">
+            {% for post in posts %}
+            <article class="blog-card" style="margin-bottom: 2rem; cursor: pointer;" onclick="location.href='{{ url_for('post', path=post.path.replace('posts/', '')) }}'">
+                <div style="flex: 1;">
+                    <span class="tag" style="margin-bottom: 0.5rem; display: inline-block;">{{ post.meta.date }}</span>
+                    <h2 style="font-size: 24px; font-weight: normal; margin-bottom: 0.5rem;">{{ post.meta.title }}</h2>
+                    <p style="font-size: 14px; color: var(--text2); font-family: 'Courier New', monospace;">{{ post.meta.description }}</p>
+                </div>
+                <span class="blog-arrow">→</span>
+            </article>
+            {% else %}
+            <p>Nenhum artigo publicado ainda.</p>
+            {% endfor %}
+        </div>
+    </main>
+
+    <footer>
+        <div class="wrapper footer-inner">
+            <div class="footer-text">
+                <span data-pt="feito com Python & café — renaldo freire" data-en="made with Python & coffee — renaldo freire">feito com Python & café — renaldo freire</span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>

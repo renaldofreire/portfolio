@@ -145,18 +145,22 @@
   <section id="blog">
     <div class="wrapper">
       <div class="section-label" data-pt="blog" data-en="blog">blog</div>
-      <div class="blog-card">
-        <div>
-          <h3 data-pt="Pensamentos sobre tecnologia ou outros devaneios"
-              data-en="Thoughts on technology or other ramblings">
-            Pensamentos sobre tecnologia ou outros devaneios
-          </h3>
-          <p data-pt="Em breve — artigos sobre Linux, Homelab, Software Livre, Privacidade e tudo mais que dar na telha."
-             data-en="Coming soon — articles on Linux, Homelab, Open Source, Privacy and whatever else comes to mind.">
-            Em breve — artigos sobre Linux, Homelab, Software Livre, Privacidade e tudo mais que dar na telha.
-          </p>
+      <div class="blog-list-mini">
+        {% for post in latest_posts %}
+        <div class="blog-card" style="margin-bottom: 1.5rem; padding: 1.5rem; cursor: pointer;" onclick="location.href='{{ url_for('post', path=post.path.replace('posts/', '')) }}'">
+          <div>
+            <span class="tag" style="font-size: 10px; margin-bottom: 0.5rem; display: inline-block;">{{ post.meta.date }}</span>
+            <h3 style="font-size: 18px;">{{ post.meta.title }}</h3>
+            <p style="font-size: 12px; margin-top: 0.5rem; opacity: 0.8;">{{ post.meta.description }}</p>
+          </div>
+          <span class="blog-arrow" aria-hidden="true">→</span>
         </div>
-        <span class="blog-arrow" aria-hidden="true">→</span>
+        {% endfor %}
+      </div>
+      <div style="margin-top: 2rem;">
+        <a href="{{ url_for('blog') }}" class="github-link" data-pt="ver blog completo →" data-en="view full blog →">
+          ver blog completo →
+        </a>
       </div>
     </div>
   </section>
