@@ -4,7 +4,6 @@ lang: pt
 description: O desafio (e o golpe no ego) de correr na Zona 2.
 tags: [corrida, saude, lifestyle]
 
-# Em passos lentos, mas constantes
 ### O Desafio de Correr na Zona 2
 
 Você já se pegou tentando esconder a velocidade reduzida do seu ritmo enquanto a senhorinha atrasada te ultrapassa? Se sim, bem-vindo ao clube da zona 2. Aquela faixa mágica de intensidade que promete transformações milagrosas em sua performance, mas que também ameaça a integridade do seu ego.
