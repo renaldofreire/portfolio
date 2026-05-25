@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog — Renaldo Freire</title>
+    <link rel="stylesheet" href="../static/css/style.css">
+    <link rel="stylesheet" href="../static/css/pygments.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>☕</text></svg>">
+</head>
+<body class="blog-page">
+
+    <nav>
+        <div class="wrapper nav-inner">
+            <a href="../index.html" class="logo">renaldofreire<span class="logo-accent">.</span>dev</a>
+            <div class="nav-links">
+                <a href="../index.html#sobre">sobre</a>
+                <a href="../index.html#projetos">projetos</a>
+                <a href="index.html">blog</a>
+                <a href="../index.html#contato">contato</a>
+            </div>
+            <div class="nav-controls">
+                <button class="ctrl-btn" id="themeBtn" onclick="toggleTheme()" aria-label="Alternar tema">
+                    <svg class="icon-svg" id="themeIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="wrapper" style="padding: 4rem 1.5rem;">
+        <div class="section-label">blog</div>
+        <h1 style="font-size: 42px; margin-bottom: 3rem;">Artigos & <em>Devaneios</em></h1>
+
+        <div class="blog-list">
+            
+            <article class="blog-card" style="margin-bottom: 2rem; cursor: pointer;" onclick="location.href='meu-primeiro-post/index.html'">
+                <div style="flex: 1;">
+                    <span class="tag" style="margin-bottom: 0.5rem; display: inline-block;">2026-05-25</span>
+                    <h2 style="font-size: 24px; font-weight: normal; margin-bottom: 0.5rem;">Como este blog (quase) se criou sozinho</h2>
+                    <p style="font-size: 14px; color: var(--text2); font-family: 'Courier New', monospace;">Um mergulho no &#34;overengineering&#34; necessário para ter um blog simples usando Python, café e teimosia.</p>
+                </div>
+                <span class="blog-arrow">→</span>
+            </article>
+            
+        </div>
+    </main>
+
+    <footer>
+        <div class="wrapper footer-inner">
+            <div class="footer-text">
+                <span data-pt="feito com Python & café — renaldo freire" data-en="made with Python & coffee — renaldo freire">feito com Python & café — renaldo freire</span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../static/js/main.js"></script>
+</body>
+</html>

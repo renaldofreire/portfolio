@@ -1,5 +1,15 @@
 [
   {
+    "name": "portfolio",
+    "description": "my new portfolio",
+    "language": "CSS",
+    "stars": 0,
+    "forks": 0,
+    "url": "https://github.com/renaldofreire/portfolio",
+    "topics": [],
+    "updated_at": "2026-05-25T06:23:36Z"
+  },
+  {
     "name": "dotfiles",
     "description": "my dotfile config",
     "language": "Lua",
@@ -18,16 +28,6 @@
     "url": "https://github.com/renaldofreire/my_dashboard",
     "topics": [],
     "updated_at": "2026-05-08T13:07:12Z"
-  },
-  {
-    "name": "portfolio",
-    "description": "my new portfolio",
-    "language": "HTML",
-    "stars": 0,
-    "forks": 0,
-    "url": "https://github.com/renaldofreire/portfolio",
-    "topics": [],
-    "updated_at": "2026-05-06T12:52:21Z"
   },
   {
     "name": "pypacks",

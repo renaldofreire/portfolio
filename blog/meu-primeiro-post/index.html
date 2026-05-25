@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Como este blog (quase) se criou sozinho — Renaldo Freire</title>
+    <link rel="stylesheet" href="../../static/css/style.css">
+    <link rel="stylesheet" href="../../static/css/pygments.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>☕</text></svg>">
+</head>
+<body class="blog-post">
+
+    <nav>
+        <div class="wrapper nav-inner">
+            <a href="../../index.html" class="logo">renaldofreire<span class="logo-accent">.</span>dev</a>
+            <div class="nav-links">
+                <a href="../index.html">← voltar ao blog</a>
+            </div>
+            <div class="nav-controls">
+                <button class="ctrl-btn" id="themeBtn" onclick="toggleTheme()" aria-label="Alternar tema">
+                    <svg class="icon-svg" id="themeIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <article class="wrapper" style="padding: 5rem 1.5rem;">
+        <header style="margin-bottom: 4rem;">
+            <span class="tag" style="margin-bottom: 1rem; display: inline-block;">2026-05-25</span>
+            <h1 style="font-size: 48px; line-height: 1.1; margin-bottom: 1.5rem;">Como este blog (quase) se criou sozinho</h1>
+            <p style="font-size: 18px; color: var(--text2); font-family: 'Courier New', monospace;">Um mergulho no &#34;overengineering&#34; necessário para ter um blog simples usando Python, café e teimosia.</p>
+        </header>
+
+        <div class="post-content">
+            <h1>O nascimento de um blog (ou: Por que não usei WordPress?)</h1>
+<p>Se você está lendo isso, parabéns! Significa que o emaranhado de scripts em Python que eu chamo de "sistema de build" realmente funcionou e não explodiu meu computador.</p>
+<p>Muita gente perguntaria: <em>"Renaldo, por que diabos você não usou o WordPress ou o Medium?"</em>. A resposta é simples: porque eu gosto de sofrer (e de ter controle total sobre cada pixel e cada linha de código). </p>
+<p>Aqui está a receita do que faz esse blog rodar enquanto eu tomo meu café:</p>
+<h3>A Santíssima Trindade do meu Setup:</h3>
+<ol>
+<li>
+<p><strong>Flask + Flask-FlatPages:</strong> 
+    O Flask é como aquele canivete suíço que eu uso para tudo. O FlatPages é a mágica que pega arquivos Markdown sem graça e os transforma em páginas HTML elegantes. Sem banco de dados, sem complicação, sem drama.</p>
+</li>
+<li>
+<p><strong>Markdown:</strong> 
+    Eu escrevo em texto puro, o Python faz o trabalho pesado e o resultado é um HTML limpo. É a forma mais próxima de "programar" um texto que eu conheço.</p>
+</li>
+<li>
+<p><strong>Frozen-Flask:</strong> 
+    Este aqui é o gênio da lâmpada. Ele pega todo o dinamismo do Flask e "congela" em arquivos estáticos. O resultado? Um site que voa, é seguro por natureza e mora de graça no GitHub Pages.</p>
+</li>
+</ol>
+<h3>O "Mestre Cuca" por trás de tudo</h3>
+<p>O real herói aqui é o <strong>GitHub Actions</strong>. Toda vez que eu faço um <code>git push</code> com um novo post, um robô em algum lugar do mundo acorda, roda meus scripts Python, limpa a sujeira e publica o site. Eu só preciso me preocupar em escrever (e em não deixar o café esfriar).</p>
+<h3>Exemplo de código (porque blog de dev tem que ter código):</h3>
+<p>Só para garantir que o realce de cores está funcionando e deixando tudo bonitão:</p>
+<div class="codehilite"><pre><span></span><code><span class="k">def</span> <span class="nf">rotina_matinal</span><span class="p">(</span><span class="n">cafe_disponivel</span><span class="p">:</span> <span class="nb">bool</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">cafe_disponivel</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;☕ Iniciando o deploy do blog...&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="s2">&quot;Mundo conquistado!&quot;</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s2">&quot;Erro Crítico: Cafeína não encontrada.&quot;</span><span class="p">)</span>
+
+<span class="c1"># Spoiler: o café sempre está disponível.</span>
+</code></pre></div>
+
+<p>Espero que gostem dos próximos posts. Vou tentar falar de Linux, Homelab e outras nerdices, sempre tentando manter o humor (ou o que restou dele depois de debugar CSS).</p>
+<p>Até a próxima!</p>
+        </div>
+
+        <footer style="margin-top: 5rem; padding-top: 2rem; border-top: 0.5px solid var(--border);">
+            <a href="../index.html" class="github-link">← Ver todos os artigos</a>
+        </footer>
+    </article>
+
+    <script src="../../static/js/main.js"></script>
+</body>
+</html>
