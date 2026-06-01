@@ -153,7 +153,7 @@ function renderPlaceholders() {
       <div class="project-title">${p.title}</div>
       <div class="project-desc">${p.desc}</div>
       <div class="project-footer">
-        <span>★ —</span><span>⑂ —</span>
+        <span style="opacity: 0.8;">${currentLang === "pt" ? "Atualizado em" : "Updated on"} ...</span>
       </div>
     </div>
   `).join("") + `
@@ -221,6 +221,13 @@ function resetForm() {
   const formResponse = document.getElementById("formResponse");
   if (contactForm && formResponse) {
     contactForm.reset();
+    contactForm.style.display = "block";
+    formResponse.style.display = "none";
+  }
+}
+
+document.addEventListener("DOMContentLoaded", renderProjects);
+ctForm.reset();
     contactForm.style.display = "block";
     formResponse.style.display = "none";
   }
