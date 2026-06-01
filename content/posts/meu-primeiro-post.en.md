@@ -2,7 +2,7 @@ title: How this blog (almost) created itself
 date: 2026-05-25
 lang: en
 description: What's necessary to have a simple blog using Python, coffee, and stubbornness.
-tags: [python, dev, good-old-hacks]
+tags: [python, dev]
 
 # The birth of a blog (or: Why didn't I use WordPress?)
 

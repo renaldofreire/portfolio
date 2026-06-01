@@ -2,7 +2,7 @@ title: Como este blog (quase) se criou sozinho
 date: 2026-05-25
 lang: pt
 description: O necessário para se ter um blog simples usando Python, café e teimosia.
-tags: [python, dev, gambiarras-do-bem]
+tags: [python, dev]
 
 # O nascimento de um blog (ou: Por que não usei WordPress?)
 

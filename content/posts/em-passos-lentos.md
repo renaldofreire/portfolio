@@ -2,7 +2,7 @@ title: Em passos lentos, mas constantes
 date: 2026-05-26
 lang: pt
 description: O desafio (e o golpe no ego) de correr na Zona 2.
-tags: [corrida, saude, lifestyle]
+tags: [corrida]
 
 ### O Desafio de Correr na Zona 2
 
