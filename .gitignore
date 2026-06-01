@@ -8,6 +8,7 @@ venv/
 
 # Build
 docs/
+static/data/
 
 # OS
 .DS_Store
