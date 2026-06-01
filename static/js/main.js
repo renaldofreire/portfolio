@@ -8,10 +8,8 @@ function applyTheme(dark) {
   const themeIcon = document.getElementById("themeIcon");
   if (themeIcon) {
     if (dark) {
-      // Ícone de Sol para mudar para o claro
       themeIcon.innerHTML = `<circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>`;
     } else {
-      // Ícone de Lua para mudar para o escuro
       themeIcon.innerHTML = `<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>`;
     }
   }
@@ -23,7 +21,6 @@ function toggleTheme() {
   applyTheme(isDark);
 }
 
-// Aplica o tema salvo antes do primeiro render para evitar flash
 (function () {
   const saved = localStorage.getItem(THEME_KEY);
   const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
@@ -42,39 +39,49 @@ function applyLang(lang) {
   document.documentElement.lang = lang === "pt" ? "pt-BR" : "en";
   const langText = document.getElementById("langText");
   if (langText) {
-    // Mostra o texto do idioma para o qual o usuário pode mudar
     langText.innerHTML = lang === "pt" ? "EN" : "PT";
   }
 
-  // Traduz textos normais
   document.querySelectorAll("[data-pt][data-en]").forEach((el) => {
     el.innerHTML = el.dataset[lang];
   });
 
-  // Traduz placeholders
   document.querySelectorAll("[data-pt-placeholder][data-en-placeholder]").forEach((el) => {
     el.placeholder = el.getAttribute(`data-${lang}-placeholder`);
   });
 
-  // Atualiza listas do blog se estiverem presentes na página
   if (typeof filterPosts === "function") filterPosts();
   if (typeof filterMiniPosts === "function") filterMiniPosts();
+  
+  // Atualiza os projetos se a grade existir
+  if (document.getElementById("projectsGrid")) {
+      renderProjects();
+  }
 }
 
 function toggleLang() {
   const next = currentLang === "pt" ? "en" : "pt";
   localStorage.setItem(LANG_KEY, next);
-  applyLang(next);
+  
+  // Se estivermos em um post e houver uma versão traduzida, redireciona
+  const altUrl = document.body.dataset.altUrl;
+  if (altUrl) {
+      window.location.href = altUrl;
+  } else {
+      applyLang(next);
+  }
 }
 
+// Inicialização do idioma
 (function () {
-  const saved = localStorage.getItem(LANG_KEY) || "pt";
-  applyLang(saved);
+  currentLang = localStorage.getItem(LANG_KEY) || "pt";
+  // Não chamamos applyLang aqui para evitar rodar renderProjects antes do DOM estar pronto
+  // O applyLang será chamado no DOMContentLoaded ou a inicialização base será feita lá
 })();
 
 
 /* ============================================================
-   PROJETOS — renderiza a partir dos dados injetados pelo Python
+   PROJETOS
    ============================================================ */
 const LANG_ICONS = {
   Python:     "⚗",
@@ -95,12 +102,16 @@ function renderProjects() {
   if (!grid) return;
 
   const scriptTag = document.getElementById("reposData");
-  let repos = [];
+  if (!scriptTag) return;
 
+  let repos = [];
   try {
-    repos = JSON.parse(scriptTag.textContent.trim());
+    const content = scriptTag.textContent.trim();
+    if (content) {
+        repos = JSON.parse(content);
+    }
   } catch (e) {
-    console.warn("Não foi possível carregar os repositórios.", e);
+    console.error("Erro ao processar reposData:", e);
   }
 
   if (repos.length === 0) {
@@ -109,10 +120,17 @@ function renderProjects() {
   }
 
   const cards = repos.map((repo) => {
-    const updatedDate = new Date(repo.updated_at).toLocaleDateString(
-      currentLang === "pt" ? "pt-BR" : "en-US",
-      { month: "short", year: "numeric" }
-    );
+    let dateStr = "—";
+    try {
+        if (repo.updated_at) {
+            dateStr = new Date(repo.updated_at).toLocaleDateString(
+              currentLang === "pt" ? "pt-BR" : "en-US",
+              { month: "short", year: "numeric" }
+            );
+        }
+    } catch (e) { console.error("Erro na data:", e); }
+
+    const label = currentLang === "pt" ? "Atualizado em" : "Updated on";
 
     return `
     <a class="project-card" href="${repo.url}" target="_blank" rel="noopener">
@@ -123,13 +141,12 @@ function renderProjects() {
       <div class="project-title">${repo.name}</div>
       <div class="project-desc">${repo.description || "—"}</div>
       <div class="project-footer">
-        <span style="opacity: 0.8;">${currentLang === "pt" ? "Atualizado em" : "Updated on"} ${updatedDate}</span>
+        <span style="opacity: 0.8;">${label} ${dateStr}</span>
       </div>
     </a>
   `;
   });
 
-  // Preenche até 6 cards; completa com card vazio se necessário
   if (cards.length % 2 !== 0) {
     cards.push(`
       <div class="project-card-empty">
@@ -144,6 +161,7 @@ function renderProjects() {
 }
 
 function renderPlaceholders() {
+  const label = currentLang === "pt" ? "Atualizado em" : "Updated on";
   const placeholders = [
     { title: "Projeto em Destaque", desc: "Carregando via API do GitHub..." },
     { title: "Automação & Scripts",  desc: "Carregando via API do GitHub..." },
@@ -159,7 +177,7 @@ function renderPlaceholders() {
       <div class="project-title">${p.title}</div>
       <div class="project-desc">${p.desc}</div>
       <div class="project-footer">
-        <span style="opacity: 0.8;">${currentLang === "pt" ? "Atualizado em" : "Updated on"} ...</span>
+        <span style="opacity: 0.8;">${label} ...</span>
       </div>
     </div>
   `).join("") + `
@@ -172,54 +190,51 @@ function renderPlaceholders() {
 }
 
 /* ============================================================
-   CONTATO — Envio AJAX via Web3Forms
+   CONTATO
    ============================================================ */
-const contactForm = document.getElementById("contactForm");
-const formResponse = document.getElementById("formResponse");
+function initContact() {
+    const contactForm = document.getElementById("contactForm");
+    const formResponse = document.getElementById("formResponse");
 
-if (contactForm) {
-  contactForm.addEventListener("submit", function (e) {
-    e.preventDefault();
-    const btn = document.getElementById("submitBtn");
-    const originalTxt = btn.innerHTML;
+    if (contactForm) {
+      contactForm.addEventListener("submit", function (e) {
+        e.preventDefault();
+        const btn = document.getElementById("submitBtn");
+        const originalTxt = btn.innerHTML;
 
-    // Feedback visual imediato
-    btn.innerHTML = currentLang === "pt" ? "enviando..." : "sending...";
-    btn.disabled = true;
+        btn.innerHTML = currentLang === "pt" ? "enviando..." : "sending...";
+        btn.disabled = true;
 
-    const formData = new FormData(contactForm);
-    const object = Object.fromEntries(formData);
-    const json = JSON.stringify(object);
+        const formData = new FormData(contactForm);
+        const object = Object.fromEntries(formData);
+        const json = JSON.stringify(object);
 
-    fetch("https://api.web3forms.com/submit", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json",
-      },
-      body: json,
-    })
-      .then(async (response) => {
-        let res = await response.json();
-        if (response.status == 200) {
-          // Sucesso
-          contactForm.style.display = "none";
-          formResponse.style.display = "block";
-        } else {
-          // Erro da API
-          console.log(response);
-          alert(res.message);
-        }
-      })
-      .catch((error) => {
-        console.log(error);
-        alert(currentLang === "pt" ? "Ocorreu um erro no envio." : "Error sending message.");
-      })
-      .then(function () {
-        btn.innerHTML = originalTxt;
-        btn.disabled = false;
+        fetch("https://api.web3forms.com/submit", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+          },
+          body: json,
+        })
+          .then(async (response) => {
+            let res = await response.json();
+            if (response.status == 200) {
+              contactForm.style.display = "none";
+              formResponse.style.display = "block";
+            } else {
+              alert(res.message);
+            }
+          })
+          .catch((error) => {
+            alert(currentLang === "pt" ? "Ocorreu um erro no envio." : "Error sending message.");
+          })
+          .then(function () {
+            btn.innerHTML = originalTxt;
+            btn.disabled = false;
+          });
       });
-  });
+    }
 }
 
 function resetForm() {
@@ -232,4 +247,17 @@ function resetForm() {
   }
 }
 
-document.addEventListener("DOMContentLoaded", renderProjects);
+/* ============================================================
+   INICIALIZAÇÃO GERAL
+   ============================================================ */
+document.addEventListener("DOMContentLoaded", () => {
+  // Inicializa o idioma salvo
+  const savedLang = localStorage.getItem(LANG_KEY) || "pt";
+  applyLang(savedLang); 
+  
+  // Renderiza projetos
+  renderProjects();
+  
+  // Inicializa contato
+  initContact();
+});
