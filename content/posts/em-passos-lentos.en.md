@@ -2,7 +2,7 @@ title: In slow but steady steps
 date: 2026-05-26
 lang: en
 description: The challenge (and the ego blow) of running in Zone 2.
-tags: [corrida]
+tags: [running]
 
 ### The Challenge of Running in Zone 2
 
