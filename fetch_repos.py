@@ -69,6 +69,7 @@ def fetch_repos():
             "updated_at": repo["updated_at"],
         })
 
+    print(f"Total de repositórios válidos encontrados: {len(repos)}")
     repos = repos[:MAX_REPOS]
 
     os.makedirs(os.path.dirname(OUTPUT_FILE), exist_ok=True)
