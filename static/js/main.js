@@ -108,7 +108,13 @@ function renderProjects() {
     return;
   }
 
-  const cards = repos.map((repo) => `
+  const cards = repos.map((repo) => {
+    const updatedDate = new Date(repo.updated_at).toLocaleDateString(
+      currentLang === "pt" ? "pt-BR" : "en-US",
+      { month: "short", year: "numeric" }
+    );
+
+    return `
     <a class="project-card" href="${repo.url}" target="_blank" rel="noopener">
       <div class="project-card-top">
         <span class="project-icon">${getIcon(repo.language)}</span>
@@ -117,11 +123,11 @@ function renderProjects() {
       <div class="project-title">${repo.name}</div>
       <div class="project-desc">${repo.description || "—"}</div>
       <div class="project-footer">
-        <span>★ ${repo.stars}</span>
-        <span>⑂ ${repo.forks}</span>
+        <span style="opacity: 0.8;">${currentLang === "pt" ? "Atualizado em" : "Updated on"} ${updatedDate}</span>
       </div>
     </a>
-  `);
+  `;
+  });
 
   // Preenche até 6 cards; completa com card vazio se necessário
   if (cards.length % 2 !== 0) {
@@ -221,13 +227,6 @@ function resetForm() {
   const formResponse = document.getElementById("formResponse");
   if (contactForm && formResponse) {
     contactForm.reset();
-    contactForm.style.display = "block";
-    formResponse.style.display = "none";
-  }
-}
-
-document.addEventListener("DOMContentLoaded", renderProjects);
-ctForm.reset();
     contactForm.style.display = "block";
     formResponse.style.display = "none";
   }
