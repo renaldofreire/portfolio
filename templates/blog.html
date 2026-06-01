@@ -52,7 +52,14 @@
                 <div style="flex: 1;">
                     <span class="tag" style="margin-bottom: 0.5rem; display: inline-block;">{{ post.meta.date }}</span>
                     <h2 style="font-size: 24px; font-weight: normal; margin-bottom: 0.5rem;">{{ post.meta.title }}</h2>
-                    <p style="font-size: 14px; color: var(--text2); font-family: 'Courier New', monospace;">{{ post.meta.description }}</p>
+                    <p style="font-size: 14px; color: var(--text2); font-family: 'Courier New', monospace; margin-bottom: 0.75rem;">{{ post.meta.description }}</p>
+                    {% if post.meta.tags %}
+                    <div style="display: flex; flex-wrap: wrap; gap: 6px;">
+                        {% for tag in post.meta.tags %}
+                        <span class="tag" style="background: transparent; border: 0.5px solid var(--border); color: var(--text2); font-size: 10px; padding: 2px 8px;">#{{ tag }}</span>
+                        {% endfor %}
+                    </div>
+                    {% endif %}
                 </div>
                 <span class="blog-arrow">→</span>
             </article>

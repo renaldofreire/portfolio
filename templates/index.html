@@ -154,7 +154,14 @@
           <div>
             <span class="tag" style="font-size: 10px; margin-bottom: 0.5rem; display: inline-block;">{{ post.meta.date }}</span>
             <h3 style="font-size: 18px;">{{ post.meta.title }}</h3>
-            <p style="font-size: 12px; margin-top: 0.5rem; opacity: 0.8;">{{ post.meta.description }}</p>
+            <p style="font-size: 12px; margin-top: 0.5rem; opacity: 0.8; margin-bottom: 0.75rem;">{{ post.meta.description }}</p>
+            {% if post.meta.tags %}
+            <div style="display: flex; flex-wrap: wrap; gap: 4px;">
+                {% for tag in post.meta.tags %}
+                <span class="tag" style="background: transparent; border: 0.5px solid var(--border); color: var(--text2); font-size: 9px; padding: 1px 6px;">#{{ tag }}</span>
+                {% endfor %}
+            </div>
+            {% endif %}
           </div>
           <span class="blog-arrow" aria-hidden="true">→</span>
         </div>
