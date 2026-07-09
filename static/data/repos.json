@@ -1,5 +1,15 @@
 [
   {
+    "name": "dotfiles",
+    "description": "my dotfile config",
+    "language": "Lua",
+    "stars": 0,
+    "forks": 0,
+    "url": "https://github.com/renaldofreire/dotfiles",
+    "topics": [],
+    "updated_at": "2026-07-07T11:49:43Z"
+  },
+  {
     "name": "playlist_maker",
     "description": "A simple playlist maker using python",
     "language": "Python",
@@ -8,16 +18,6 @@
     "url": "https://github.com/renaldofreire/playlist_maker",
     "topics": [],
     "updated_at": "2026-06-05T05:30:44Z"
-  },
-  {
-    "name": "dotfiles",
-    "description": "my dotfile config",
-    "language": "Lua",
-    "stars": 0,
-    "forks": 0,
-    "url": "https://github.com/renaldofreire/dotfiles",
-    "topics": [],
-    "updated_at": "2026-06-01T06:31:15Z"
   },
   {
     "name": "portfolio",
