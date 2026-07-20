@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -29,6 +29,13 @@
                 <button class="ctrl-btn" id="themeBtn" onclick="toggleTheme()" aria-label="Alternar tema">
                     <svg class="icon-svg" id="themeIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></svg>
                 </button>
+                <a class="ctrl-btn" href="../../feed.xml" target="_blank" aria-label="RSS Feed" title="RSS Feed">
+                    <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M4 11a9 9 0 0 1 9 9"></path>
+                        <path d="M4 4a16 16 0 0 1 16 16"></path>
+                        <circle cx="5" cy="19" r="1"></circle>
+                    </svg>
+                </a>
             </div>
         </div>
     </nav>
@@ -99,7 +106,7 @@
         </div>
 
         <footer style="margin-top: 5rem; padding-top: 2rem; border-top: 0.5px solid var(--border);">
-            <a href="../index.html" class="github-link">← Ver todos os artigos</a>
+            <a href="../index.html" class="github-link" data-pt="← Ver todos os artigos" data-en="← View all articles">← Ver todos os artigos</a>
         </footer>
     </article>
 

@@ -1,5 +1,15 @@
 [
   {
+    "name": "portfolio",
+    "description": "my new portfolio",
+    "language": "HTML",
+    "stars": 0,
+    "forks": 0,
+    "url": "https://github.com/renaldofreire/portfolio",
+    "topics": [],
+    "updated_at": "2026-07-20T12:20:16Z"
+  },
+  {
     "name": "dotfiles",
     "description": "my dotfile config",
     "language": "Lua",
@@ -18,16 +28,6 @@
     "url": "https://github.com/renaldofreire/playlist_maker",
     "topics": [],
     "updated_at": "2026-06-05T05:30:44Z"
-  },
-  {
-    "name": "portfolio",
-    "description": "my new portfolio",
-    "language": "HTML",
-    "stars": 0,
-    "forks": 0,
-    "url": "https://github.com/renaldofreire/portfolio",
-    "topics": [],
-    "updated_at": "2026-06-01T06:27:34Z"
   },
   {
     "name": "strava_exporter",

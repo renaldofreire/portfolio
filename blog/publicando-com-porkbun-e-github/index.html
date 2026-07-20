@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,7 +9,7 @@
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>☕</text></svg>">
     <link rel="alternate" type="application/rss+xml" title="RSS Feed — Renaldo Freire" href="../../feed.xml">
 </head>
-<body class="blog-post" >
+<body class="blog-post" data-alt-url="../publicando-com-porkbun-e-github.en/index.html">
 
     <nav>
         <div class="wrapper nav-inner">
@@ -29,11 +29,27 @@
                 <button class="ctrl-btn" id="themeBtn" onclick="toggleTheme()" aria-label="Alternar tema">
                     <svg class="icon-svg" id="themeIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></svg>
                 </button>
+                <a class="ctrl-btn" href="../../feed.xml" target="_blank" aria-label="RSS Feed" title="RSS Feed">
+                    <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M4 11a9 9 0 0 1 9 9"></path>
+                        <path d="M4 4a16 16 0 0 1 16 16"></path>
+                        <circle cx="5" cy="19" r="1"></circle>
+                    </svg>
+                </a>
             </div>
         </div>
     </nav>
 
     <article class="wrapper" style="padding: 5rem 1.5rem;">
+        
+        <div style="margin-bottom: 2rem; padding: 1rem; background: var(--bg2); border-radius: 4px; border-left: 3px solid var(--accent2); font-family: 'Courier New', monospace; font-size: 13px;">
+            
+            <span>🇺🇸 This post is also available in </span>
+            <a href="../publicando-com-porkbun-e-github.en/index.html" 
+               onclick="localStorage.setItem('rf-lang', 'en')"
+               style="color: var(--accent2); text-decoration: underline;">English</a>.
+            
+        </div>
         
 
         <header style="margin-bottom: 4rem;">
@@ -82,7 +98,7 @@ hoje quero contar um pouco sobre os bastidores de como este site saiu da minha m
         </div>
 
         <footer style="margin-top: 5rem; padding-top: 2rem; border-top: 0.5px solid var(--border);">
-            <a href="../index.html" class="github-link">← Ver todos os artigos</a>
+            <a href="../index.html" class="github-link" data-pt="← Ver todos os artigos" data-en="← View all articles">← Ver todos os artigos</a>
         </footer>
     </article>
 
