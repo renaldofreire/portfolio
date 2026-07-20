@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Renaldo Freire — Blog</title>
+    <link>https://renaldofreire.dev/blog/</link>
+    <description>Artigos &amp; Devaneios de Renaldo Freire</description>
+    <language>pt-br</language>
+    <lastBuildDate>{{ build_date }}</lastBuildDate>
+    <atom:link href="https://renaldofreire.dev/feed.xml" rel="self" type="application/rss+xml" />
+    {% for post in posts %}
+    <item>
+      <title>{{ post.meta.title }}</title>
+      <link>https://renaldofreire.dev/blog/{{ post.path.replace('posts/', '') }}/</link>
+      <guid>https://renaldofreire.dev/blog/{{ post.path.replace('posts/', '') }}/</guid>
+      <pubDate>{{ post.meta.date | format_rfc822 }}</pubDate>
+      <description>{{ post.meta.description }}</description>
+    </item>
+    {% endfor %}
+  </channel>
+</rss>

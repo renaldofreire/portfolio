@@ -22,6 +22,10 @@ def post():
         if page.path.startswith('posts/'):
             yield {'path': page.path.replace('posts/', '')}
 
+@freezer.register_generator
+def feed():
+    yield {}
+
 if __name__ == "__main__":
     freezer.freeze()
     
