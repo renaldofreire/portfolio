@@ -32,6 +32,13 @@
                 <button class="ctrl-btn" id="themeBtn" onclick="toggleTheme()" aria-label="Alternar tema">
                     <svg class="icon-svg" id="themeIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></svg>
                 </button>
+                <a class="ctrl-btn" href="{{ url_for('feed') }}" target="_blank" aria-label="RSS Feed" title="RSS Feed">
+                    <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M4 11a9 9 0 0 1 9 9"></path>
+                        <path d="M4 4a16 16 0 0 1 16 16"></path>
+                        <circle cx="5" cy="19" r="1"></circle>
+                    </svg>
+                </a>
             </div>
         </div>
     </nav>
@@ -65,7 +72,7 @@
                 <span class="blog-arrow">→</span>
             </article>
             {% else %}
-            <p>Nenhum artigo publicado ainda.</p>
+            <p data-pt="Nenhum artigo publicado ainda." data-en="No articles published yet.">Nenhum artigo publicado ainda.</p>
             {% endfor %}
         </div>
     </main>

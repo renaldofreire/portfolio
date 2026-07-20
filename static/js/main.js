@@ -162,10 +162,14 @@ function renderProjects() {
 
 function renderPlaceholders() {
   const label = currentLang === "pt" ? "Atualizado em" : "Updated on";
-  const placeholders = [
+  const placeholders = currentLang === "pt" ? [
     { title: "Projeto em Destaque", desc: "Carregando via API do GitHub..." },
     { title: "Automação & Scripts",  desc: "Carregando via API do GitHub..." },
     { title: "Homelab & DevOps",     desc: "Carregando via API do GitHub..." },
+  ] : [
+    { title: "Featured Project", desc: "Loading via GitHub API..." },
+    { title: "Automation & Scripts",  desc: "Loading via GitHub API..." },
+    { title: "Homelab & DevOps",     desc: "Loading via GitHub API..." },
   ];
 
   return placeholders.map((p) => `
