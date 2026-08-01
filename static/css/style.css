@@ -487,6 +487,9 @@ section {
   align-items: center;
   gap: 2rem;
   transition: border-color 0.15s;
+  cursor: pointer;
+  color: var(--text);
+  text-decoration: none;
 }
 
 .blog-card:hover { border-color: var(--accent2); }
@@ -552,12 +555,20 @@ section {
   border-radius: 2px;
   font-family: 'Courier New', monospace;
   resize: none;
-  outline: none;
   transition: border-color 0.15s;
 }
 
 .form-group input:focus,
-.form-group textarea:focus { border-color: var(--accent2); }
+.form-group textarea:focus {
+  border-color: var(--accent2);
+  outline: 2px solid var(--accent2);
+  outline-offset: 2px;
+}
+
+.ctrl-btn:focus-visible {
+  outline: 2px solid var(--accent2);
+  outline-offset: 2px;
+}
 
 .form-group textarea { height: 100px; }
 

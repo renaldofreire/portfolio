@@ -93,6 +93,16 @@ const LANG_ICONS = {
   default:    "◆",
 };
 
+function escapeHtml(str) {
+  if (!str) return "";
+  return String(str)
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#39;");
+}
+
 function getIcon(lang) {
   return LANG_ICONS[lang] || LANG_ICONS.default;
 }
@@ -133,15 +143,15 @@ function renderProjects() {
     const label = currentLang === "pt" ? "Atualizado em" : "Updated on";
 
     return `
-    <a class="project-card" href="${repo.url}" target="_blank" rel="noopener">
+    <a class="project-card" href="${escapeHtml(repo.url)}" target="_blank" rel="noopener">
       <div class="project-card-top">
         <span class="project-icon">${getIcon(repo.language)}</span>
-        <span class="project-lang">${repo.language}</span>
+        <span class="project-lang">${escapeHtml(repo.language)}</span>
       </div>
-      <div class="project-title">${repo.name}</div>
-      <div class="project-desc">${repo.description || "—"}</div>
+      <div class="project-title">${escapeHtml(repo.name)}</div>
+      <div class="project-desc">${escapeHtml(repo.description) || "—"}</div>
       <div class="project-footer">
-        <span style="opacity: 0.8;">${label} ${dateStr}</span>
+        <span style="opacity: 0.8;">${escapeHtml(label)} ${escapeHtml(dateStr)}</span>
       </div>
     </a>
   `;
@@ -255,13 +265,10 @@ function resetForm() {
    INICIALIZAÇÃO GERAL
    ============================================================ */
 document.addEventListener("DOMContentLoaded", () => {
-  // Inicializa o idioma salvo
+  // Inicializa o idioma salvo (já chama renderProjects() internamente via applyLang)
   const savedLang = localStorage.getItem(LANG_KEY) || "pt";
-  applyLang(savedLang); 
-  
-  // Renderiza projetos
-  renderProjects();
-  
+  applyLang(savedLang);
+
   // Inicializa contato
   initContact();
 });

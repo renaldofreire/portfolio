@@ -53,10 +53,10 @@
 
         <div class="blog-list">
             {% for post in posts %}
-            <article class="blog-card post-item" 
+            <a class="blog-card post-item"
+                     href="{{ url_for('post', path=post.path.replace('posts/', '')) }}"
                      data-lang="{{ post.meta.lang or 'pt' }}"
-                     style="margin-bottom: 2rem; cursor: pointer;" 
-                     onclick="location.href='{{ url_for('post', path=post.path.replace('posts/', '')) }}'">
+                     style="margin-bottom: 2rem;">
                 <div style="flex: 1;">
                     <span class="tag" style="margin-bottom: 0.5rem; display: inline-block;">{{ post.meta.date }}</span>
                     <h2 style="font-size: 24px; font-weight: normal; margin-bottom: 0.5rem;">{{ post.meta.title }}</h2>
@@ -70,7 +70,7 @@
                     {% endif %}
                 </div>
                 <span class="blog-arrow">→</span>
-            </article>
+            </a>
             {% else %}
             <p data-pt="Nenhum artigo publicado ainda." data-en="No articles published yet.">Nenhum artigo publicado ainda.</p>
             {% endfor %}
