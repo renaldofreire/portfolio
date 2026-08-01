@@ -1,5 +1,15 @@
 [
   {
+    "name": "portfolio",
+    "description": "my new portfolio",
+    "language": "HTML",
+    "stars": 0,
+    "forks": 0,
+    "url": "https://github.com/renaldofreire/portfolio",
+    "topics": [],
+    "updated_at": "2026-08-01T11:26:44Z"
+  },
+  {
     "name": "dotfiles",
     "description": "my dotfile config",
     "language": "Lua",
@@ -8,16 +18,6 @@
     "url": "https://github.com/renaldofreire/dotfiles",
     "topics": [],
     "updated_at": "2026-07-21T04:35:02Z"
-  },
-  {
-    "name": "portfolio",
-    "description": "my new portfolio",
-    "language": "HTML",
-    "stars": 0,
-    "forks": 0,
-    "url": "https://github.com/renaldofreire/portfolio",
-    "topics": [],
-    "updated_at": "2026-07-20T12:34:24Z"
   },
   {
     "name": "playlist_maker",
