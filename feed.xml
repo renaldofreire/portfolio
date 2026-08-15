@@ -5,7 +5,7 @@
     <link>https://renaldofreire.dev/blog/</link>
     <description>Artigos &amp; Devaneios de Renaldo Freire</description>
     <language>pt-br</language>
-    <lastBuildDate>Thu, 13 Aug 2026 07:41:08 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 15 Aug 2026 06:45:38 +0000</lastBuildDate>
     <atom:link href="https://renaldofreire.dev/feed.xml" rel="self" type="application/rss+xml" />
     
     <item>
@@ -41,19 +41,19 @@
     </item>
     
     <item>
-      <title><![CDATA[How this blog (almost) created itself]]></title>
-      <link>https://renaldofreire.dev/blog/meu-primeiro-post.en/</link>
-      <guid>https://renaldofreire.dev/blog/meu-primeiro-post.en/</guid>
-      <pubDate>Mon, 25 May 2026 00:00:00 +0000</pubDate>
-      <description><![CDATA[What&#39;s necessary to have a simple blog using Python, coffee, and stubbornness.]]></description>
-    </item>
-    
-    <item>
       <title><![CDATA[Como este blog (quase) se criou sozinho]]></title>
       <link>https://renaldofreire.dev/blog/meu-primeiro-post/</link>
       <guid>https://renaldofreire.dev/blog/meu-primeiro-post/</guid>
       <pubDate>Mon, 25 May 2026 00:00:00 +0000</pubDate>
       <description><![CDATA[O necessário para se ter um blog simples usando Python, café e teimosia.]]></description>
+    </item>
+    
+    <item>
+      <title><![CDATA[How this blog (almost) created itself]]></title>
+      <link>https://renaldofreire.dev/blog/meu-primeiro-post.en/</link>
+      <guid>https://renaldofreire.dev/blog/meu-primeiro-post.en/</guid>
+      <pubDate>Mon, 25 May 2026 00:00:00 +0000</pubDate>
+      <description><![CDATA[What&#39;s necessary to have a simple blog using Python, coffee, and stubbornness.]]></description>
     </item>
     
   </channel>
