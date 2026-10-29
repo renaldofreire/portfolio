@@ -5,16 +5,8 @@
     <link>https://renaldofreire.dev/blog/</link>
     <description>Artigos &amp; Devaneios de Renaldo Freire</description>
     <language>pt-br</language>
-    <lastBuildDate>Tue, 27 Oct 2026 11:52:28 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 29 Oct 2026 12:38:10 +0000</lastBuildDate>
     <atom:link href="https://renaldofreire.dev/feed.xml" rel="self" type="application/rss+xml" />
-    
-    <item>
-      <title><![CDATA[Tirando a poeira: Como publiquei meu portfólio usando Porkbun e GitHub]]></title>
-      <link>https://renaldofreire.dev/blog/publicando-com-porkbun-e-github/</link>
-      <guid>https://renaldofreire.dev/blog/publicando-com-porkbun-e-github/</guid>
-      <pubDate>Mon, 20 Jul 2026 00:00:00 +0000</pubDate>
-      <description><![CDATA[Um guia leve e sem mistérios sobre como registrar seu domínio e colocar seu site no ar de graça.]]></description>
-    </item>
     
     <item>
       <title><![CDATA[Dusting Off: How I Published My Portfolio Using Porkbun and GitHub]]></title>
@@ -22,6 +14,14 @@
       <guid>https://renaldofreire.dev/blog/publicando-com-porkbun-e-github.en/</guid>
       <pubDate>Mon, 20 Jul 2026 00:00:00 +0000</pubDate>
       <description><![CDATA[A light and simple guide on how to register your domain and put your site online for free.]]></description>
+    </item>
+    
+    <item>
+      <title><![CDATA[Tirando a poeira: Como publiquei meu portfólio usando Porkbun e GitHub]]></title>
+      <link>https://renaldofreire.dev/blog/publicando-com-porkbun-e-github/</link>
+      <guid>https://renaldofreire.dev/blog/publicando-com-porkbun-e-github/</guid>
+      <pubDate>Mon, 20 Jul 2026 00:00:00 +0000</pubDate>
+      <description><![CDATA[Um guia leve e sem mistérios sobre como registrar seu domínio e colocar seu site no ar de graça.]]></description>
     </item>
     
     <item>
