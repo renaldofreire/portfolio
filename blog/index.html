@@ -1,207 +1,80 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Blog — Renaldo Freire</title>
-    <link rel="stylesheet" href="../static/css/style.css">
-    <link rel="stylesheet" href="../static/css/pygments.css">
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>☕</text></svg>">
-    <link rel="alternate" type="application/rss+xml" title="RSS Feed — Renaldo Freire" href="../feed.xml">
+    
+    <meta name="description" content="Desenvolvedor de software, corredor, entusiasta open-source.">
+    <meta property="og:title" content="Renaldo Freire">
+    <meta property="og:description" content="Desenvolvedor de software, corredor, entusiasta open-source.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://renaldofreire.dev/blog/">
+    <meta property="og:site_name" content="Renaldo Freire">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Renaldo Freire">
+    <meta name="twitter:description" content="Desenvolvedor de software, corredor, entusiasta open-source.">
+    <link rel="stylesheet" href="../static/style.css">
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="../feed.xml">
+    <link rel="canonical" href="https://renaldofreire.dev/blog/">
+    
 </head>
-<body class="blog-page">
+<body>
+    <header>
+        <nav>
+            
+            <a class="site-name" href="../index.html"><strong>Renaldo Freire</strong></a>
+            <span class="nav-links">
+                <a href="../projetos/index.html">Projetos</a>
+                <span class="sep">/</span>
+                <a href="index.html">Blog</a>
+                <span class="sep">/</span>
+                <a href="../contato/index.html">Contato</a>
+                <span class="sep">/</span>
+                <a href="../static/cv.pdf">CV</a>
+            </span>
+            
+        </nav>
+    </header>
 
-    <nav>
-        <div class="wrapper nav-inner">
-            <a href="../index.html" class="logo">renaldofreire<span class="logo-accent">.</span>dev</a>
-            <div class="nav-links">
-                <a href="../index.html#sobre"    data-pt="sobre"    data-en="about">sobre</a>
-                <a href="../index.html#projetos" data-pt="projetos" data-en="projects">projetos</a>
-                <a href="index.html"           data-pt="blog"     data-en="blog">blog</a>
-                <a href="../index.html#contato"  data-pt="contato"  data-en="contact">contato</a>
-            </div>
-            <div class="nav-controls">
-                <button class="ctrl-btn" id="langBtn" onclick="toggleLang()" aria-label="Alternar idioma">
-                    <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <circle cx="12" cy="12" r="10"></circle>
-                        <line x1="2" y1="12" x2="22" y2="12"></line>
-                        <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
-                    </svg>
-                    <span id="langText">EN</span>
-                </button>
-                <button class="ctrl-btn" id="themeBtn" onclick="toggleTheme()" aria-label="Alternar tema">
-                    <svg class="icon-svg" id="themeIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></svg>
-                </button>
-                <a class="ctrl-btn" href="../feed.xml" target="_blank" aria-label="RSS Feed" title="RSS Feed">
-                    <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M4 11a9 9 0 0 1 9 9"></path>
-                        <path d="M4 4a16 16 0 0 1 16 16"></path>
-                        <circle cx="5" cy="19" r="1"></circle>
-                    </svg>
-                </a>
-            </div>
-        </div>
-    </nav>
+    <main>
+        
+<h1>Blog</h1>
 
-    <main class="wrapper" style="padding: 4rem 1.5rem;">
-        <div class="section-label" data-pt="blog" data-en="blog">blog</div>
-        <h1 style="font-size: 42px; margin-bottom: 3rem;" 
-            data-pt="Artigos & <em>Devaneios</em>" 
-            data-en="Articles & <em>Ramblings</em>">
-            Artigos & <em>Devaneios</em>
-        </h1>
+<ul class="post-list">
 
-        <div class="blog-list">
-            
-            <a class="blog-card post-item"
-                     href="publicando-com-porkbun-e-github.en/index.html"
-                     data-lang="en"
-                     style="margin-bottom: 2rem;">
-                <div style="flex: 1;">
-                    <span class="tag" style="margin-bottom: 0.5rem; display: inline-block;">2026-07-20</span>
-                    <h2 style="font-size: 24px; font-weight: normal; margin-bottom: 0.5rem;">Dusting Off: How I Published My Portfolio Using Porkbun and GitHub</h2>
-                    <p style="font-size: 14px; color: var(--text2); font-family: 'Courier New', monospace; margin-bottom: 0.75rem;">A light and simple guide on how to register your domain and put your site online for free.</p>
-                    
-                    <div style="display: flex; flex-wrap: wrap; gap: 6px;">
-                        
-                        <span class="tag" style="background: transparent; border: 0.5px solid var(--border); color: var(--text2); font-size: 10px; padding: 2px 8px;">#web</span>
-                        
-                        <span class="tag" style="background: transparent; border: 0.5px solid var(--border); color: var(--text2); font-size: 10px; padding: 2px 8px;">#dev</span>
-                        
-                        <span class="tag" style="background: transparent; border: 0.5px solid var(--border); color: var(--text2); font-size: 10px; padding: 2px 8px;">#tutorial</span>
-                        
-                    </div>
-                    
-                </div>
-                <span class="blog-arrow">→</span>
-            </a>
-            
-            <a class="blog-card post-item"
-                     href="publicando-com-porkbun-e-github/index.html"
-                     data-lang="pt"
-                     style="margin-bottom: 2rem;">
-                <div style="flex: 1;">
-                    <span class="tag" style="margin-bottom: 0.5rem; display: inline-block;">2026-07-20</span>
-                    <h2 style="font-size: 24px; font-weight: normal; margin-bottom: 0.5rem;">Tirando a poeira: Como publiquei meu portfólio usando Porkbun e GitHub</h2>
-                    <p style="font-size: 14px; color: var(--text2); font-family: 'Courier New', monospace; margin-bottom: 0.75rem;">Um guia leve e sem mistérios sobre como registrar seu domínio e colocar seu site no ar de graça.</p>
-                    
-                    <div style="display: flex; flex-wrap: wrap; gap: 6px;">
-                        
-                        <span class="tag" style="background: transparent; border: 0.5px solid var(--border); color: var(--text2); font-size: 10px; padding: 2px 8px;">#web</span>
-                        
-                        <span class="tag" style="background: transparent; border: 0.5px solid var(--border); color: var(--text2); font-size: 10px; padding: 2px 8px;">#dev</span>
-                        
-                        <span class="tag" style="background: transparent; border: 0.5px solid var(--border); color: var(--text2); font-size: 10px; padding: 2px 8px;">#tutorial</span>
-                        
-                    </div>
-                    
-                </div>
-                <span class="blog-arrow">→</span>
-            </a>
-            
-            <a class="blog-card post-item"
-                     href="em-passos-lentos/index.html"
-                     data-lang="pt"
-                     style="margin-bottom: 2rem;">
-                <div style="flex: 1;">
-                    <span class="tag" style="margin-bottom: 0.5rem; display: inline-block;">2026-05-26</span>
-                    <h2 style="font-size: 24px; font-weight: normal; margin-bottom: 0.5rem;">Em passos lentos, mas constantes</h2>
-                    <p style="font-size: 14px; color: var(--text2); font-family: 'Courier New', monospace; margin-bottom: 0.75rem;">O desafio (e o golpe no ego) de correr na Zona 2.</p>
-                    
-                    <div style="display: flex; flex-wrap: wrap; gap: 6px;">
-                        
-                        <span class="tag" style="background: transparent; border: 0.5px solid var(--border); color: var(--text2); font-size: 10px; padding: 2px 8px;">#corrida</span>
-                        
-                    </div>
-                    
-                </div>
-                <span class="blog-arrow">→</span>
-            </a>
-            
-            <a class="blog-card post-item"
-                     href="em-passos-lentos.en/index.html"
-                     data-lang="en"
-                     style="margin-bottom: 2rem;">
-                <div style="flex: 1;">
-                    <span class="tag" style="margin-bottom: 0.5rem; display: inline-block;">2026-05-26</span>
-                    <h2 style="font-size: 24px; font-weight: normal; margin-bottom: 0.5rem;">In slow but steady steps</h2>
-                    <p style="font-size: 14px; color: var(--text2); font-family: 'Courier New', monospace; margin-bottom: 0.75rem;">The challenge (and the ego blow) of running in Zone 2.</p>
-                    
-                    <div style="display: flex; flex-wrap: wrap; gap: 6px;">
-                        
-                        <span class="tag" style="background: transparent; border: 0.5px solid var(--border); color: var(--text2); font-size: 10px; padding: 2px 8px;">#running</span>
-                        
-                    </div>
-                    
-                </div>
-                <span class="blog-arrow">→</span>
-            </a>
-            
-            <a class="blog-card post-item"
-                     href="meu-primeiro-post/index.html"
-                     data-lang="pt"
-                     style="margin-bottom: 2rem;">
-                <div style="flex: 1;">
-                    <span class="tag" style="margin-bottom: 0.5rem; display: inline-block;">2026-05-25</span>
-                    <h2 style="font-size: 24px; font-weight: normal; margin-bottom: 0.5rem;">Como este blog (quase) se criou sozinho</h2>
-                    <p style="font-size: 14px; color: var(--text2); font-family: 'Courier New', monospace; margin-bottom: 0.75rem;">O necessário para se ter um blog simples usando Python, café e teimosia.</p>
-                    
-                    <div style="display: flex; flex-wrap: wrap; gap: 6px;">
-                        
-                        <span class="tag" style="background: transparent; border: 0.5px solid var(--border); color: var(--text2); font-size: 10px; padding: 2px 8px;">#python</span>
-                        
-                        <span class="tag" style="background: transparent; border: 0.5px solid var(--border); color: var(--text2); font-size: 10px; padding: 2px 8px;">#dev</span>
-                        
-                    </div>
-                    
-                </div>
-                <span class="blog-arrow">→</span>
-            </a>
-            
-            <a class="blog-card post-item"
-                     href="meu-primeiro-post.en/index.html"
-                     data-lang="en"
-                     style="margin-bottom: 2rem;">
-                <div style="flex: 1;">
-                    <span class="tag" style="margin-bottom: 0.5rem; display: inline-block;">2026-05-25</span>
-                    <h2 style="font-size: 24px; font-weight: normal; margin-bottom: 0.5rem;">How this blog (almost) created itself</h2>
-                    <p style="font-size: 14px; color: var(--text2); font-family: 'Courier New', monospace; margin-bottom: 0.75rem;">What&#39;s necessary to have a simple blog using Python, coffee, and stubbornness.</p>
-                    
-                    <div style="display: flex; flex-wrap: wrap; gap: 6px;">
-                        
-                        <span class="tag" style="background: transparent; border: 0.5px solid var(--border); color: var(--text2); font-size: 10px; padding: 2px 8px;">#python</span>
-                        
-                        <span class="tag" style="background: transparent; border: 0.5px solid var(--border); color: var(--text2); font-size: 10px; padding: 2px 8px;">#dev</span>
-                        
-                    </div>
-                    
-                </div>
-                <span class="blog-arrow">→</span>
-            </a>
-            
-        </div>
+    <li>
+        <a class="post-title" href="publicando-com-porkbun-e-github/index.html">Tirando a poeira: Como publiquei meu portfólio usando Porkbun e GitHub</a>
+        <span class="post-meta">20 jul 2026 · web, dev, tutorial</span>
+        <span class="post-desc">Um guia leve e sem mistérios sobre como registrar seu domínio e colocar seu site no ar de graça.</span>
+    </li>
+
+    <li>
+        <a class="post-title" href="em-passos-lentos/index.html">Em passos lentos, mas constantes</a>
+        <span class="post-meta">26 mai 2026 · corrida</span>
+        <span class="post-desc">O desafio (e o golpe no ego) de correr na Zona 2.</span>
+    </li>
+
+    <li>
+        <a class="post-title" href="meu-primeiro-post/index.html">Como este blog (quase) se criou sozinho</a>
+        <span class="post-meta">25 mai 2026 · python, dev</span>
+        <span class="post-desc">O necessário para se ter um blog simples usando Python, café e teimosia.</span>
+    </li>
+
+</ul>
+
     </main>
 
-    <script>
-        // Filtra os posts baseado no idioma salvo
-        function filterPosts() {
-            const lang = localStorage.getItem("rf-lang") || "pt";
-            document.querySelectorAll('.post-item').forEach(el => {
-                el.style.display = el.dataset.lang === lang ? 'flex' : 'none';
-            });
-        }
-        document.addEventListener("DOMContentLoaded", filterPosts);
-        // Ouve mudanças de idioma do main.js se necessário (opcional)
-    </script>
-
     <footer>
-        <div class="wrapper footer-inner">
-            <div class="footer-text">
-                <span data-pt="feito com Python & café — renaldo freire" data-en="made with Python & coffee — renaldo freire">feito com Python & café — renaldo freire</span>
-            </div>
-        </div>
+        <p>
+            
+            <a href="../en/index.html">Read in English</a>
+            
+            <span class="sep">·</span>
+            <a href="../feed.xml">RSS</a>
+            <span class="sep">·</span>
+            <a href="https://github.com/renaldofreire">GitHub</a>
+        </p>
     </footer>
-
-    <script src="../static/js/main.js"></script>
 </body>
 </html>

@@ -1,74 +1,57 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Como este blog (quase) se criou sozinho — Renaldo Freire</title>
-    <link rel="stylesheet" href="../../static/css/style.css">
-    <link rel="stylesheet" href="../../static/css/pygments.css">
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>☕</text></svg>">
-    <link rel="alternate" type="application/rss+xml" title="RSS Feed — Renaldo Freire" href="../../feed.xml">
+    
+    <meta name="description" content="O necessário para se ter um blog simples usando Python, café e teimosia.">
+    <meta property="og:title" content="Como este blog (quase) se criou sozinho — Renaldo Freire">
+    <meta property="og:description" content="O necessário para se ter um blog simples usando Python, café e teimosia.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://renaldofreire.dev/blog/meu-primeiro-post/">
+    <meta property="og:site_name" content="Renaldo Freire">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Como este blog (quase) se criou sozinho — Renaldo Freire">
+    <meta name="twitter:description" content="O necessário para se ter um blog simples usando Python, café e teimosia.">
+    <link rel="stylesheet" href="../../static/style.css">
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="../../feed.xml">
+    <link rel="canonical" href="https://renaldofreire.dev/blog/meu-primeiro-post/">
+    
 </head>
-<body class="blog-post" data-alt-url="../meu-primeiro-post.en/index.html">
+<body>
+    <header>
+        <nav>
+            
+            <a class="site-name" href="../../index.html"><strong>Renaldo Freire</strong></a>
+            <span class="nav-links">
+                <a href="../../projetos/index.html">Projetos</a>
+                <span class="sep">/</span>
+                <a href="../index.html">Blog</a>
+                <span class="sep">/</span>
+                <a href="../../contato/index.html">Contato</a>
+                <span class="sep">/</span>
+                <a href="../../static/cv.pdf">CV</a>
+            </span>
+            
+        </nav>
+    </header>
 
-    <nav>
-        <div class="wrapper nav-inner">
-            <a href="../../index.html" class="logo">renaldofreire<span class="logo-accent">.</span>dev</a>
-            <div class="nav-links">
-                <a href="../index.html" data-pt="← voltar ao blog" data-en="← back to blog">← voltar ao blog</a>
-            </div>
-            <div class="nav-controls">
-                <button class="ctrl-btn" id="langBtn" onclick="toggleLang()" aria-label="Alternar idioma">
-                    <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <circle cx="12" cy="12" r="10"></circle>
-                        <line x1="2" y1="12" x2="22" y2="12"></line>
-                        <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
-                    </svg>
-                    <span id="langText">EN</span>
-                </button>
-                <button class="ctrl-btn" id="themeBtn" onclick="toggleTheme()" aria-label="Alternar tema">
-                    <svg class="icon-svg" id="themeIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></svg>
-                </button>
-                <a class="ctrl-btn" href="../../feed.xml" target="_blank" aria-label="RSS Feed" title="RSS Feed">
-                    <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M4 11a9 9 0 0 1 9 9"></path>
-                        <path d="M4 4a16 16 0 0 1 16 16"></path>
-                        <circle cx="5" cy="19" r="1"></circle>
-                    </svg>
-                </a>
-            </div>
-        </div>
-    </nav>
-
-    <article class="wrapper" style="padding: 5rem 1.5rem;">
+    <main>
         
-        <div style="margin-bottom: 2rem; padding: 1rem; background: var(--bg2); border-radius: 4px; border-left: 3px solid var(--accent2); font-family: 'Courier New', monospace; font-size: 13px;">
-            
-            <span>🇺🇸 This post is also available in </span>
-            <a href="../meu-primeiro-post.en/index.html" 
-               onclick="localStorage.setItem('rf-lang', 'en')"
-               style="color: var(--accent2); text-decoration: underline;">English</a>.
-            
-        </div>
+<article>
+    <h1>Como este blog (quase) se criou sozinho</h1>
+    <p class="article-meta">
+        25 mai 2026 · python, dev
         
+        <span class="sep">·</span>
+        
+        <a href="../../en/blog/meu-primeiro-post/index.html">Read in English</a>
+        
+        
+    </p>
 
-        <header style="margin-bottom: 4rem;">
-            <span class="tag" style="margin-bottom: 1rem; display: inline-block;">2026-05-25</span>
-            <h1 style="font-size: 48px; line-height: 1.1; margin-bottom: 1.5rem;">Como este blog (quase) se criou sozinho</h1>
-            <p style="font-size: 18px; color: var(--text2); font-family: 'Courier New', monospace; margin-bottom: 1.5rem;">O necessário para se ter um blog simples usando Python, café e teimosia.</p>
-            
-            <div style="display: flex; flex-wrap: wrap; gap: 8px;">
-                
-                <span class="tag" style="background: var(--bg3); color: var(--text2); font-size: 11px; padding: 4px 12px;">#python</span>
-                
-                <span class="tag" style="background: var(--bg3); color: var(--text2); font-size: 11px; padding: 4px 12px;">#dev</span>
-                
-            </div>
-            
-        </header>
-
-        <div class="post-content">
-            <h1>O nascimento de um blog (ou: Por que não usei WordPress?)</h1>
+    <h1>O nascimento de um blog (ou: Por que não usei WordPress?)</h1>
 <p>Se você está lendo isso, parabéns! Significa que o emaranhado de scripts em Python que eu chamo de "sistema de build" realmente funcionou e não explodiu meu computador.</p>
 <p>Muita gente perguntaria: <em>"Renaldo, por que diabos você não usou o WordPress ou o Medium?"</em>. A resposta é simples: porque eu gosto de sofrer (e de ter controle total sobre cada pixel e cada linha de código). </p>
 <p>Aqui está a receita do que faz esse blog rodar enquanto eu tomo meu café:</p>
@@ -103,13 +86,22 @@
 
 <p>Espero que gostem dos próximos posts. Embreve falarei de Linux, Homelab, Software Livre outras nerdices.</p>
 <p>Até a próxima!</p>
-        </div>
+</article>
 
-        <footer style="margin-top: 5rem; padding-top: 2rem; border-top: 0.5px solid var(--border);">
-            <a href="../index.html" class="github-link" data-pt="← Ver todos os artigos" data-en="← View all articles">← Ver todos os artigos</a>
-        </footer>
-    </article>
+<a class="back-link" href="../index.html">← Voltar ao blog</a>
 
-    <script src="../../static/js/main.js"></script>
+    </main>
+
+    <footer>
+        <p>
+            
+            <a href="../../en/index.html">Read in English</a>
+            
+            <span class="sep">·</span>
+            <a href="../../feed.xml">RSS</a>
+            <span class="sep">·</span>
+            <a href="https://github.com/renaldofreire">GitHub</a>
+        </p>
+    </footer>
 </body>
 </html>

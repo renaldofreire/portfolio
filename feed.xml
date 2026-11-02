@@ -1,60 +1,36 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Renaldo Freire — Blog</title>
-    <link>https://renaldofreire.dev/blog/</link>
-    <description>Artigos &amp; Devaneios de Renaldo Freire</description>
-    <language>pt-br</language>
-    <lastBuildDate>Sun, 01 Nov 2026 12:57:23 +0000</lastBuildDate>
-    <atom:link href="https://renaldofreire.dev/feed.xml" rel="self" type="application/rss+xml" />
+<channel>
+    <title>Renaldo Freire</title>
+    <link>https://renaldofreire.dev/</link>
+    <description>Posts de Renaldo Freire</description>
+    <language>pt-BR</language>
+    <lastBuildDate>Mon, 02 Nov 2026 10:09:54 +0000</lastBuildDate>
+    <atom:link href="https://renaldofreire.dev/feed.xml" rel="self" type="application/rss+xml"/>
     
     <item>
-      <title><![CDATA[Dusting Off: How I Published My Portfolio Using Porkbun and GitHub]]></title>
-      <link>https://renaldofreire.dev/blog/publicando-com-porkbun-e-github.en/</link>
-      <guid>https://renaldofreire.dev/blog/publicando-com-porkbun-e-github.en/</guid>
-      <pubDate>Mon, 20 Jul 2026 00:00:00 +0000</pubDate>
-      <description><![CDATA[A light and simple guide on how to register your domain and put your site online for free.]]></description>
+        <title><![CDATA[Tirando a poeira: Como publiquei meu portfólio usando Porkbun e GitHub]]></title>
+        <link>https://renaldofreire.dev/blog/publicando-com-porkbun-e-github/</link>
+        <description><![CDATA[Um guia leve e sem mistérios sobre como registrar seu domínio e colocar seu site no ar de graça.]]></description>
+        <pubDate>Mon, 20 Jul 2026 00:00:00 +0000</pubDate>
+        <guid>https://renaldofreire.dev/blog/publicando-com-porkbun-e-github/</guid>
     </item>
     
     <item>
-      <title><![CDATA[Tirando a poeira: Como publiquei meu portfólio usando Porkbun e GitHub]]></title>
-      <link>https://renaldofreire.dev/blog/publicando-com-porkbun-e-github/</link>
-      <guid>https://renaldofreire.dev/blog/publicando-com-porkbun-e-github/</guid>
-      <pubDate>Mon, 20 Jul 2026 00:00:00 +0000</pubDate>
-      <description><![CDATA[Um guia leve e sem mistérios sobre como registrar seu domínio e colocar seu site no ar de graça.]]></description>
+        <title><![CDATA[Em passos lentos, mas constantes]]></title>
+        <link>https://renaldofreire.dev/blog/em-passos-lentos/</link>
+        <description><![CDATA[O desafio (e o golpe no ego) de correr na Zona 2.]]></description>
+        <pubDate>Tue, 26 May 2026 00:00:00 +0000</pubDate>
+        <guid>https://renaldofreire.dev/blog/em-passos-lentos/</guid>
     </item>
     
     <item>
-      <title><![CDATA[Em passos lentos, mas constantes]]></title>
-      <link>https://renaldofreire.dev/blog/em-passos-lentos/</link>
-      <guid>https://renaldofreire.dev/blog/em-passos-lentos/</guid>
-      <pubDate>Tue, 26 May 2026 00:00:00 +0000</pubDate>
-      <description><![CDATA[O desafio (e o golpe no ego) de correr na Zona 2.]]></description>
+        <title><![CDATA[Como este blog (quase) se criou sozinho]]></title>
+        <link>https://renaldofreire.dev/blog/meu-primeiro-post/</link>
+        <description><![CDATA[O necessário para se ter um blog simples usando Python, café e teimosia.]]></description>
+        <pubDate>Mon, 25 May 2026 00:00:00 +0000</pubDate>
+        <guid>https://renaldofreire.dev/blog/meu-primeiro-post/</guid>
     </item>
     
-    <item>
-      <title><![CDATA[In slow but steady steps]]></title>
-      <link>https://renaldofreire.dev/blog/em-passos-lentos.en/</link>
-      <guid>https://renaldofreire.dev/blog/em-passos-lentos.en/</guid>
-      <pubDate>Tue, 26 May 2026 00:00:00 +0000</pubDate>
-      <description><![CDATA[The challenge (and the ego blow) of running in Zone 2.]]></description>
-    </item>
-    
-    <item>
-      <title><![CDATA[Como este blog (quase) se criou sozinho]]></title>
-      <link>https://renaldofreire.dev/blog/meu-primeiro-post/</link>
-      <guid>https://renaldofreire.dev/blog/meu-primeiro-post/</guid>
-      <pubDate>Mon, 25 May 2026 00:00:00 +0000</pubDate>
-      <description><![CDATA[O necessário para se ter um blog simples usando Python, café e teimosia.]]></description>
-    </item>
-    
-    <item>
-      <title><![CDATA[How this blog (almost) created itself]]></title>
-      <link>https://renaldofreire.dev/blog/meu-primeiro-post.en/</link>
-      <guid>https://renaldofreire.dev/blog/meu-primeiro-post.en/</guid>
-      <pubDate>Mon, 25 May 2026 00:00:00 +0000</pubDate>
-      <description><![CDATA[What&#39;s necessary to have a simple blog using Python, coffee, and stubbornness.]]></description>
-    </item>
-    
-  </channel>
+</channel>
 </rss>

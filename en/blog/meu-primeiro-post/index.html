@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>How this blog (almost) created itself — Renaldo Freire</title>
+    
+    <meta name="description" content="What&#39;s necessary to have a simple blog using Python, coffee, and stubbornness.">
+    <meta property="og:title" content="How this blog (almost) created itself — Renaldo Freire">
+    <meta property="og:description" content="What&#39;s necessary to have a simple blog using Python, coffee, and stubbornness.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://renaldofreire.dev/en/blog/meu-primeiro-post/">
+    <meta property="og:site_name" content="Renaldo Freire">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="How this blog (almost) created itself — Renaldo Freire">
+    <meta name="twitter:description" content="What&#39;s necessary to have a simple blog using Python, coffee, and stubbornness.">
+    <link rel="stylesheet" href="../../../static/style.css">
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="../../feed.xml">
+    <link rel="canonical" href="https://renaldofreire.dev/en/blog/meu-primeiro-post/">
+    
+</head>
+<body>
+    <header>
+        <nav>
+            
+            <a class="site-name" href="../../index.html"><strong>Renaldo Freire</strong></a>
+            <span class="nav-links">
+                <a href="../../projects/index.html">Projects</a>
+                <span class="sep">/</span>
+                <a href="../index.html">Blog</a>
+                <span class="sep">/</span>
+                <a href="../../contact/index.html">Contact</a>
+                <span class="sep">/</span>
+                <a href="../../../static/cv.pdf">CV</a>
+            </span>
+            
+        </nav>
+    </header>
+
+    <main>
+        
+<article>
+    <h1>How this blog (almost) created itself</h1>
+    <p class="article-meta">
+        25 May 2026 · python, dev
+        
+        <span class="sep">·</span>
+        
+        <a href="../../../blog/meu-primeiro-post/index.html">Ler em Português</a>
+        
+        
+    </p>
+
+    <h1>The birth of a blog (or: Why didn't I use WordPress?)</h1>
+<p>If you're reading this, congratulations! It means the tangle of Python scripts I call a "build system" actually worked and didn't blow up my computer.</p>
+<p>Many people would ask: <em>"Renaldo, why on earth didn't you use WordPress or Medium?"</em>. The answer is simple: because I like to suffer (and to have total control over every pixel and every line of code). </p>
+<p>Here's the recipe for what makes this blog run while I drink my coffee:</p>
+<h3>The Holy Trinity of my Setup:</h3>
+<ol>
+<li>
+<p><strong>Flask + Flask-FlatPages:</strong> 
+    Flask is like that Swiss Army knife I use for everything. FlatPages is the magic that takes dull Markdown files and turns them into elegant HTML pages. No database, no complication, no drama.</p>
+</li>
+<li>
+<p><strong>Markdown:</strong> 
+    I write in plain text, Python does the heavy lifting, and the result is clean HTML. It's the closest thing to "programming" text I know.</p>
+</li>
+<li>
+<p><strong>Frozen-Flask:</strong> 
+    This one is the genie in the lamp. It takes all the dynamism of Flask and "freezes" it into static files. The result? A site that flies, is secure by nature, and lives for free on GitHub Pages.</p>
+</li>
+</ol>
+<h3>The "Master Chef" behind it all</h3>
+<p>The real hero here is <strong>GitHub Actions</strong>. Every time I <code>git push</code> a new post, a robot somewhere in the world wakes up, runs my Python scripts, cleans up the mess, and publishes the site. I only need to worry about writing (and not letting the coffee get cold).</p>
+<h3>Code example (because a dev blog must have code):</h3>
+<p>Just to make sure the syntax highlighting is working and looking great:</p>
+<div class="codehilite"><pre><span></span><code><span class="k">def</span> <span class="nf">morning_routine</span><span class="p">(</span><span class="n">coffee_available</span><span class="p">:</span> <span class="nb">bool</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">coffee_available</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;☕ Starting blog deploy...&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="s2">&quot;World conquered!&quot;</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s2">&quot;Critical Error: Caffeine not found.&quot;</span><span class="p">)</span>
+
+<span class="c1"># Spoiler: coffee is always available.</span>
+</code></pre></div>
+
+<p>I hope you enjoy the next posts. Soon I will talk about Linux, Homelab, Open Source, and other geeky stuff.</p>
+<p>See you next time!</p>
+</article>
+
+<a class="back-link" href="../index.html">← Back to blog</a>
+
+    </main>
+
+    <footer>
+        <p>
+            
+            <a href="../../../index.html">Ler em Português</a>
+            
+            <span class="sep">·</span>
+            <a href="../../feed.xml">RSS</a>
+            <span class="sep">·</span>
+            <a href="https://github.com/renaldofreire">GitHub</a>
+        </p>
+    </footer>
+</body>
+</html>

@@ -1,418 +1,83 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Portfolio de Renaldo Freire — Analista de Qualidade & Desenvolvedor Python">
-  <title>Renaldo Freire</title>
-  <link rel="stylesheet" href="static/css/style.css">
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>☕</text></svg>">
-  <link rel="alternate" type="application/rss+xml" title="RSS Feed — Renaldo Freire" href="feed.xml">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Renaldo Freire</title>
+    
+    <meta name="description" content="Desenvolvedor de software, corredor, entusiasta open-source.">
+    <meta property="og:title" content="Renaldo Freire">
+    <meta property="og:description" content="Desenvolvedor de software, corredor, entusiasta open-source.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://renaldofreire.dev/">
+    <meta property="og:site_name" content="Renaldo Freire">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Renaldo Freire">
+    <meta name="twitter:description" content="Desenvolvedor de software, corredor, entusiasta open-source.">
+    <link rel="stylesheet" href="static/style.css">
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="feed.xml">
+    <link rel="canonical" href="https://renaldofreire.dev/">
+    
 </head>
 <body>
-
-  <nav>
-    <div class="wrapper nav-inner">
-      <a href="https://renaldofreire.dev/" class="logo">renaldofreire<span class="logo-accent">.</span>dev</a>
-      <div class="nav-links">
-        <a href="#sobre"   data-pt="sobre"    data-en="about">sobre</a>
-        <a href="#projetos" data-pt="projetos" data-en="projects">projetos</a>
-        <a href="#blog"    data-pt="blog"     data-en="blog">blog</a>
-        <a href="#contato" data-pt="contato"  data-en="contact">contato</a>
-      </div>
-      <div class="nav-controls">
-        <button class="ctrl-btn" id="langBtn" onclick="toggleLang()" aria-label="Alternar idioma">
-          <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="12" cy="12" r="10"></circle>
-            <line x1="2" y1="12" x2="22" y2="12"></line>
-            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
-          </svg>
-          <span id="langText">EN</span>
-        </button>
-        <button class="ctrl-btn" id="themeBtn" onclick="toggleTheme()" aria-label="Alternar tema">
-          <svg class="icon-svg" id="themeIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <!-- O conteúdo será injetado pelo JavaScript -->
-          </svg>
-        </button>
-        <a class="ctrl-btn" href="feed.xml" target="_blank" aria-label="RSS Feed" title="RSS Feed">
-          <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M4 11a9 9 0 0 1 9 9"></path>
-            <path d="M4 4a16 16 0 0 1 16 16"></path>
-            <circle cx="5" cy="19" r="1"></circle>
-          </svg>
-        </a>
-      </div>
-    </div>
-  </nav>
-
-  <!-- HERO -->
-  <section class="hero">
-    <div class="wrapper">
-
-      <div class="cup-wrap">
-        <svg class="steam-svg" width="24" height="32" viewBox="0 0 24 32" fill="none" aria-hidden="true">
-          <path class="steam-path steam-1" d="M12 30 Q6 22 12 16 Q18 10 12 4" stroke-width="2.5" />
-          <path class="steam-path steam-2" d="M12 30 Q18 22 12 16 Q6 10 12 4" stroke-width="2" />
-        </svg>
-        <svg class="cup-main-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
-          <!-- Corpo da Xícara -->
-          <path d="M18 8H6c-1 0-2 1-2 2v3c0 4.5 3.5 8 8 8s8-3.5 8-8v-3c0-1-1-2-2-2Z" />
-          <!-- Alça -->
-          <path d="M18 11c2 0 3.5 1.5 3.5 3.5S20 18 18 18" />
-          <!-- Aro Interno (Profundidade) -->
-          <path d="M4 10c0 1.5 3.6 2.5 8 2.5s8-1 8-2.5" />
-        </svg>
-      </div>
-
-      <h1>Renaldo<br><em>Freire</em></h1>
-      <p class="hero-sub"
-         data-pt="Analista de Qualidade & Desenvolvedor Python"
-         data-en="Quality Analyst & Python Developer">
-        Analista de Qualidade & Desenvolvedor Python
-      </p>
-      <div class="hero-actions">
-        <a href="#projetos" class="btn-primary" data-pt="ver projetos"    data-en="view projects">ver projetos</a>
-        <a href="#contato"  class="btn-secondary" data-pt="entrar em contato" data-en="get in touch">entrar em contato</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- SOBRE -->
-  <section id="sobre">
-    <div class="wrapper">
-      <div class="section-label" data-pt="sobre mim" data-en="about me">sobre mim</div>
-      <div class="about-grid">
-        <div class="about-text">
-          <p data-pt="Formado em Análise e Desenvolvimento de Sistemas, com ampla experiência como Transaction Quality Analyst. Sou o pai da Louise e um grande amante de corrida, software livre e café."
-             data-en="Graduated in Systems Analysis and Development, with extensive experience as a Transaction Quality Analyst. I'm Louise's father and a great enthusiast of running, open source and coffee.">
-            Formado em Análise e Desenvolvimento de Sistemas, com ampla experiência como Transaction Quality Analyst. Sou o pai da Louise e um grande amante de corrida, software livre e café.
-          </p>
-          <p class="sub"
-             data-pt="Trabalho com qualidade de processos internos para uma empresa multinacional. Cuido de relatórios analíticos e governança. Desenvolvo projetos pessoais em Python, e cuido de alguns servidores locais há alguns anos."
-             data-en="I work with internal process quality for a multinational company. I handle analytical reporting and governance. I develop personal projects in Python and have been managing local servers for a few years.">
-            Trabalho com qualidade de processos internos para uma empresa multinacional. Cuido de relatórios analíticos e governança. Desenvolvo projetos pessoais em Python, e cuido de alguns servidores locais há alguns anos.
-          </p>
-          <div class="about-tags">
-            <!-- Qualidade & Processos -->
-            <span class="tag">Quality Analyst</span>
-            <span class="tag">Troubleshooting & RCA</span>
-            <span class="tag">Ticketing Systems</span>
+    <header>
+        <nav>
             
-            <!-- Infraestrutura & Sistemas -->
-            <span class="tag">Operating Systems</span>
-            <span class="tag">Virtualization</span>
-            <span class="tag">Proxmox</span>
-            <span class="tag">Docker</span>
-            <span class="tag">Networking</span>
+            <a class="site-name" href="index.html"><strong>Renaldo Freire</strong></a>
+            <span class="nav-links">
+                <a href="projetos/index.html">Projetos</a>
+                <span class="sep">/</span>
+                <a href="blog/index.html">Blog</a>
+                <span class="sep">/</span>
+                <a href="contato/index.html">Contato</a>
+                <span class="sep">/</span>
+                <a href="static/cv.pdf">CV</a>
+            </span>
             
-            <!-- Desenvolvimento & Automação -->
-            <span class="tag">Python</span>
-            <span class="tag">Scripting & Programming</span>
-            <span class="tag">Bash</span>
-            <span class="tag">Git</span>
-            <span class="tag">CI/CD</span>
-            <span class="tag">Linux</span>
-          </div>
-        </div>
-        <div class="about-stats">
-          <div class="stat-item">
-            <div class="stat-num">7+</div>
-            <div class="stat-label" data-pt="anos na empresa" data-en="years at the company">anos na empresa</div>
-          </div>
-          <div class="stat-item">
-            <div class="stat-num">6+</div>
-            <div class="stat-label" data-pt="anos como TQA" data-en="years as TQA">anos como TQA</div>
-          </div>
-          <div class="stat-item">
-            <div class="stat-num">∞</div>
-            <div class="stat-label" data-pt="xícaras de café" data-en="cups of coffee">xícaras de café</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+        </nav>
+    </header>
 
-  <!-- PROJETOS -->
-  <section id="projetos">
-    <div class="wrapper">
-      <div class="section-label" data-pt="projetos" data-en="projects">projetos</div>
-      <div class="projects-grid" id="projectsGrid">
+    <main>
         
-      </div>
-      <a href="https://github.com/renaldofreire"
-         target="_blank" rel="noopener"
-         class="github-link"
-         data-pt="ver todos no GitHub →"
-         data-en="view all on GitHub →">
-        ver todos no GitHub →
-      </a>
-    </div>
-  </section>
 
-  <!-- BLOG -->
-  <section id="blog">
-    <div class="wrapper">
-      <div class="section-label" data-pt="blog" data-en="blog">blog</div>
-      <div class="blog-list-mini">
-        
-        <a class="blog-card post-item-mini"
-             href="blog/publicando-com-porkbun-e-github.en/index.html"
-             data-lang="en"
-             style="margin-bottom: 1.5rem; padding: 1.5rem;">
-          <div>
-            <span class="tag" style="font-size: 10px; margin-bottom: 0.5rem; display: inline-block;">2026-07-20</span>
-            <h3 style="font-size: 18px;">Dusting Off: How I Published My Portfolio Using Porkbun and GitHub</h3>
-            <p style="font-size: 12px; margin-top: 0.5rem; opacity: 0.8; margin-bottom: 0.75rem;">A light and simple guide on how to register your domain and put your site online for free.</p>
-            
-            <div style="display: flex; flex-wrap: wrap; gap: 4px;">
-                
-                <span class="tag" style="background: transparent; border: 0.5px solid var(--border); color: var(--text2); font-size: 9px; padding: 1px 6px;">#web</span>
-                
-                <span class="tag" style="background: transparent; border: 0.5px solid var(--border); color: var(--text2); font-size: 9px; padding: 1px 6px;">#dev</span>
-                
-                <span class="tag" style="background: transparent; border: 0.5px solid var(--border); color: var(--text2); font-size: 9px; padding: 1px 6px;">#tutorial</span>
-                
-            </div>
-            
-          </div>
-          <span class="blog-arrow" aria-hidden="true">→</span>
-        </a>
-        
-        <a class="blog-card post-item-mini"
-             href="blog/publicando-com-porkbun-e-github/index.html"
-             data-lang="pt"
-             style="margin-bottom: 1.5rem; padding: 1.5rem;">
-          <div>
-            <span class="tag" style="font-size: 10px; margin-bottom: 0.5rem; display: inline-block;">2026-07-20</span>
-            <h3 style="font-size: 18px;">Tirando a poeira: Como publiquei meu portfólio usando Porkbun e GitHub</h3>
-            <p style="font-size: 12px; margin-top: 0.5rem; opacity: 0.8; margin-bottom: 0.75rem;">Um guia leve e sem mistérios sobre como registrar seu domínio e colocar seu site no ar de graça.</p>
-            
-            <div style="display: flex; flex-wrap: wrap; gap: 4px;">
-                
-                <span class="tag" style="background: transparent; border: 0.5px solid var(--border); color: var(--text2); font-size: 9px; padding: 1px 6px;">#web</span>
-                
-                <span class="tag" style="background: transparent; border: 0.5px solid var(--border); color: var(--text2); font-size: 9px; padding: 1px 6px;">#dev</span>
-                
-                <span class="tag" style="background: transparent; border: 0.5px solid var(--border); color: var(--text2); font-size: 9px; padding: 1px 6px;">#tutorial</span>
-                
-            </div>
-            
-          </div>
-          <span class="blog-arrow" aria-hidden="true">→</span>
-        </a>
-        
-        <a class="blog-card post-item-mini"
-             href="blog/em-passos-lentos/index.html"
-             data-lang="pt"
-             style="margin-bottom: 1.5rem; padding: 1.5rem;">
-          <div>
-            <span class="tag" style="font-size: 10px; margin-bottom: 0.5rem; display: inline-block;">2026-05-26</span>
-            <h3 style="font-size: 18px;">Em passos lentos, mas constantes</h3>
-            <p style="font-size: 12px; margin-top: 0.5rem; opacity: 0.8; margin-bottom: 0.75rem;">O desafio (e o golpe no ego) de correr na Zona 2.</p>
-            
-            <div style="display: flex; flex-wrap: wrap; gap: 4px;">
-                
-                <span class="tag" style="background: transparent; border: 0.5px solid var(--border); color: var(--text2); font-size: 9px; padding: 1px 6px;">#corrida</span>
-                
-            </div>
-            
-          </div>
-          <span class="blog-arrow" aria-hidden="true">→</span>
-        </a>
-        
-        <a class="blog-card post-item-mini"
-             href="blog/em-passos-lentos.en/index.html"
-             data-lang="en"
-             style="margin-bottom: 1.5rem; padding: 1.5rem;">
-          <div>
-            <span class="tag" style="font-size: 10px; margin-bottom: 0.5rem; display: inline-block;">2026-05-26</span>
-            <h3 style="font-size: 18px;">In slow but steady steps</h3>
-            <p style="font-size: 12px; margin-top: 0.5rem; opacity: 0.8; margin-bottom: 0.75rem;">The challenge (and the ego blow) of running in Zone 2.</p>
-            
-            <div style="display: flex; flex-wrap: wrap; gap: 4px;">
-                
-                <span class="tag" style="background: transparent; border: 0.5px solid var(--border); color: var(--text2); font-size: 9px; padding: 1px 6px;">#running</span>
-                
-            </div>
-            
-          </div>
-          <span class="blog-arrow" aria-hidden="true">→</span>
-        </a>
-        
-        <a class="blog-card post-item-mini"
-             href="blog/meu-primeiro-post/index.html"
-             data-lang="pt"
-             style="margin-bottom: 1.5rem; padding: 1.5rem;">
-          <div>
-            <span class="tag" style="font-size: 10px; margin-bottom: 0.5rem; display: inline-block;">2026-05-25</span>
-            <h3 style="font-size: 18px;">Como este blog (quase) se criou sozinho</h3>
-            <p style="font-size: 12px; margin-top: 0.5rem; opacity: 0.8; margin-bottom: 0.75rem;">O necessário para se ter um blog simples usando Python, café e teimosia.</p>
-            
-            <div style="display: flex; flex-wrap: wrap; gap: 4px;">
-                
-                <span class="tag" style="background: transparent; border: 0.5px solid var(--border); color: var(--text2); font-size: 9px; padding: 1px 6px;">#python</span>
-                
-                <span class="tag" style="background: transparent; border: 0.5px solid var(--border); color: var(--text2); font-size: 9px; padding: 1px 6px;">#dev</span>
-                
-            </div>
-            
-          </div>
-          <span class="blog-arrow" aria-hidden="true">→</span>
-        </a>
-        
-        <a class="blog-card post-item-mini"
-             href="blog/meu-primeiro-post.en/index.html"
-             data-lang="en"
-             style="margin-bottom: 1.5rem; padding: 1.5rem;">
-          <div>
-            <span class="tag" style="font-size: 10px; margin-bottom: 0.5rem; display: inline-block;">2026-05-25</span>
-            <h3 style="font-size: 18px;">How this blog (almost) created itself</h3>
-            <p style="font-size: 12px; margin-top: 0.5rem; opacity: 0.8; margin-bottom: 0.75rem;">What&#39;s necessary to have a simple blog using Python, coffee, and stubbornness.</p>
-            
-            <div style="display: flex; flex-wrap: wrap; gap: 4px;">
-                
-                <span class="tag" style="background: transparent; border: 0.5px solid var(--border); color: var(--text2); font-size: 9px; padding: 1px 6px;">#python</span>
-                
-                <span class="tag" style="background: transparent; border: 0.5px solid var(--border); color: var(--text2); font-size: 9px; padding: 1px 6px;">#dev</span>
-                
-            </div>
-            
-          </div>
-          <span class="blog-arrow" aria-hidden="true">→</span>
-        </a>
-        
-      </div>
-      <script>
-        function filterMiniPosts() {
-            const lang = localStorage.getItem("rf-lang") || "pt";
-            let count = 0;
-            document.querySelectorAll('.post-item-mini').forEach(el => {
-                if (el.dataset.lang === lang && count < 3) {
-                    el.style.display = 'flex';
-                    count++;
-                } else {
-                    el.style.display = 'none';
-                }
-            });
-        }
-        document.addEventListener("DOMContentLoaded", filterMiniPosts);
-      </script>
-      <div style="margin-top: 2rem;">
-        <a href="blog/index.html" class="github-link" data-pt="ver blog completo →" data-en="view full blog →">
-          ver blog completo →
-        </a>
-      </div>
-    </div>
-  </section>
+<h1>Oi, eu sou o Renaldo Freire.</h1>
+<p class="subtitle">Escrevo código, corro sem rumo nas horas vagas e tento simplificar as coisas sempre que possível.</p>
+<p>Sou desenvolvedor de software, entusiasta de open-source, Linux e um bom café. Este é meu canto na internet — um espaço para compartilhar <a href="projetos/index.html">projetos</a>, <a href="blog/index.html">textos</a> e o que mais me interessar.</p>
 
-  <!-- CONTATO -->
-  <section id="contato">
-    <div class="wrapper">
-      <div class="section-label" data-pt="contato" data-en="contact">contato</div>
-      <div class="contact-grid">
-        <div class="contact-form-container">
-          <form id="contactForm" action="https://api.web3forms.com/submit" method="POST" class="contact-form">
-            <!-- Chave de Acesso Web3Forms -->
-            <input type="hidden" name="access_key" value="cd2eb4c2-8333-44a4-acbf-f8e09873285b">
+<h2>Posts recentes</h2>
 
-          <div class="form-group">
-            <label for="name" data-pt="nome" data-en="name">nome</label>
-            <input type="text" name="name" id="name" 
-                   placeholder="Seu nome" 
-                   data-pt-placeholder="Seu nome" 
-                   data-en-placeholder="Your name" required>
-          </div>
-          <div class="form-group">
-            <label for="email" data-pt="e-mail" data-en="e-mail">e-mail</label>
-            <input type="email" name="email" id="email" 
-                   placeholder="seu@email.com" 
-                   data-pt-placeholder="seu@email.com" 
-                   data-en-placeholder="your@email.com" required>
-          </div>
-          <div class="form-group">
-            <label for="message" data-pt="mensagem" data-en="message">mensagem</label>
-            <textarea name="message" id="message" 
-                      placeholder="Olá Renaldo..." 
-                      data-pt-placeholder="Olá Renaldo..." 
-                      data-en-placeholder="Hello Renaldo..." required></textarea>
-          </div>
-            <button type="submit" id="submitBtn" class="btn-primary" data-pt="enviar mensagem" data-en="send message">enviar mensagem</button>
-          </form>
 
-          <!-- Mensagem de Sucesso (Oculta por padrão) -->
-          <div id="formResponse" style="display:none; text-align:center; padding: 2rem 0;">
-            <div class="cup-wrap" style="margin: 0 auto 1.5rem;">
-              <svg class="steam-svg" width="24" height="32" viewBox="0 0 24 32" fill="none" aria-hidden="true">
-                <path class="steam-path steam-1" d="M12 30 Q6 22 12 16 Q18 10 12 4" stroke-width="2.5" />
-                <path class="steam-path steam-2" d="M12 30 Q18 22 12 16 Q6 10 12 4" stroke-width="2" />
-              </svg>
-              <svg class="cup-main-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
-                <path d="M18 8H6c-1 0-2 1-2 2v3c0 4.5 3.5 8 8 8s8-3.5 8-8v-3c0-1-1-2-2-2Z" />
-                <path d="M18 11c2 0 3.5 1.5 3.5 3.5S20 18 18 18" />
-                <path d="M4 10c0 1.5 3.6 2.5 8 2.5s8-1 8-2.5" />
-              </svg>
-            </div>
-            <h3 data-pt="Mensagem enviada!" data-en="Message sent!">Mensagem enviada!</h3>
-            <p style="font-size: 13px; color: var(--text2); margin-top: 0.5rem;" 
-               data-pt="Obrigado pelo contato. Responderei em breve." 
-               data-en="Thanks for reaching out. I'll get back to you soon.">
-               Obrigado pelo contato. Responderei em breve.
-            </p>
-            <button onclick="resetForm()" class="github-link" style="background:none; border:none; cursor:pointer; margin-top: 1.5rem;"
-                    data-pt="← enviar outra" data-en="← send another">
-              ← enviar outra
-            </button>
-          </div>
-        </div>
-        <div class="contact-links">
-          <div class="contact-link-item">
-            <div class="contact-link-icon">gh</div>
-            <div>
-              <div class="link-label">GitHub</div>
-              <a href="https://github.com/renaldofreire" target="_blank" rel="noopener" class="link-value">@renaldofreire</a>
-            </div>
-          </div>
-          <div class="contact-link-item">
-            <div class="contact-link-icon">in</div>
-            <div>
-              <div class="link-label">LinkedIn</div>
-              <a href="https://www.linkedin.com/in/renaldofreire/" target="_blank" rel="noopener" class="link-value">/renaldofreire</a>
-            </div>
-          </div>
-          <div class="contact-link-item">
-            <div class="contact-link-icon">@</div>
-            <div>
-              <div class="link-label">e-mail</div>
-              <a href="mailto:renaldo@duck.com" class="link-value">renaldo@duck.com</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+<ul class="post-list">
 
-  <footer>
-    <div class="wrapper footer-inner">
-      <div class="footer-text">
-        <svg class="footer-cup" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
-          <path d="M18 8H6c-1 0-2 1-2 2v3c0 4.5 3.5 8 8 8s8-3.5 8-8v-3c0-1-1-2-2-2Z" />
-          <path d="M18 11c2 0 3.5 1.5 3.5 3.5S20 18 18 18" />
-          <path d="M4 10c0 1.5 3.6 2.5 8 2.5s8-1 8-2.5" />
-        </svg>
-        <span data-pt="feito com Python & café — renaldo freire © 2026"
-              data-en="made with Python & coffee — renaldo freire © 2026">
-          feito com Python & café — renaldo freire © 2026
-        </span>
-      </div>
-      <div class="footer-text">Flask + Frozen-Flask</div>
-    </div>
-  </footer>
+    <li>
+        <a class="post-title" href="blog/publicando-com-porkbun-e-github/index.html">Tirando a poeira: Como publiquei meu portfólio usando Porkbun e GitHub</a>
+        <span class="post-meta">20 jul 2026</span>
+    </li>
 
-  <!-- Dados dos repositórios injetados pelo Python no build -->
-  <script id="reposData" type="application/json">
-    [{"description": "my dotfile config", "forks": 0, "language": "Lua", "name": "dotfiles", "stars": 0, "topics": [], "updated_at": "2026-09-08T04:40:35Z", "url": "https://github.com/renaldofreire/dotfiles"}, {"description": "meus temas para o miniflux", "forks": 0, "language": "CSS", "name": "miniflux-custom-theme", "stars": 0, "topics": [], "updated_at": "2026-08-03T04:10:32Z", "url": "https://github.com/renaldofreire/miniflux-custom-theme"}, {"description": "my new portfolio", "forks": 0, "language": "HTML", "name": "portfolio", "stars": 0, "topics": [], "updated_at": "2026-08-01T12:17:34Z", "url": "https://github.com/renaldofreire/portfolio"}, {"description": "A simple playlist maker using python", "forks": 0, "language": "Python", "name": "playlist_maker", "stars": 0, "topics": [], "updated_at": "2026-06-05T05:30:44Z", "url": "https://github.com/renaldofreire/playlist_maker"}]
-  </script>
+    <li>
+        <a class="post-title" href="blog/em-passos-lentos/index.html">Em passos lentos, mas constantes</a>
+        <span class="post-meta">26 mai 2026</span>
+    </li>
 
-  <script src="static/js/main.js"></script>
+    <li>
+        <a class="post-title" href="blog/meu-primeiro-post/index.html">Como este blog (quase) se criou sozinho</a>
+        <span class="post-meta">25 mai 2026</span>
+    </li>
+
+</ul>
+
+    </main>
+
+    <footer>
+        <p>
+            
+            <a href="en/index.html">Read in English</a>
+            
+            <span class="sep">·</span>
+            <a href="feed.xml">RSS</a>
+            <span class="sep">·</span>
+            <a href="https://github.com/renaldofreire">GitHub</a>
+        </p>
+    </footer>
 </body>
 </html>
