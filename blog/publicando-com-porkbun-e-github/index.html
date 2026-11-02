@@ -3,17 +3,18 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Tirando a poeira: Como publiquei meu portfólio usando Porkbun e GitHub — Renaldo Freire</title>
+    <title>Publicando um site com GitHub Pages e Porkbun — Renaldo Freire</title>
     
-    <meta name="description" content="Um guia leve e sem mistérios sobre como registrar seu domínio e colocar seu site no ar de graça.">
-    <meta property="og:title" content="Tirando a poeira: Como publiquei meu portfólio usando Porkbun e GitHub — Renaldo Freire">
-    <meta property="og:description" content="Um guia leve e sem mistérios sobre como registrar seu domínio e colocar seu site no ar de graça.">
+    <meta name="description" content="Guia prático para hospedar um site estático no GitHub Pages e configurar um domínio personalizado via Porkbun com HTTPS.">
+    <meta property="og:title" content="Publicando um site com GitHub Pages e Porkbun — Renaldo Freire">
+    <meta property="og:description" content="Guia prático para hospedar um site estático no GitHub Pages e configurar um domínio personalizado via Porkbun com HTTPS.">
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://renaldofreire.dev/blog/publicando-com-porkbun-e-github/">
     <meta property="og:site_name" content="Renaldo Freire">
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Tirando a poeira: Como publiquei meu portfólio usando Porkbun e GitHub — Renaldo Freire">
-    <meta name="twitter:description" content="Um guia leve e sem mistérios sobre como registrar seu domínio e colocar seu site no ar de graça.">
+    <meta name="twitter:title" content="Publicando um site com GitHub Pages e Porkbun — Renaldo Freire">
+    <meta name="twitter:description" content="Guia prático para hospedar um site estático no GitHub Pages e configurar um domínio personalizado via Porkbun com HTTPS.">
+    <link rel="icon" type="image/svg+xml" href="../../static/favicon.svg">
     <link rel="stylesheet" href="../../static/style.css">
     <link rel="alternate" type="application/rss+xml" title="RSS" href="../../feed.xml">
     <link rel="canonical" href="https://renaldofreire.dev/blog/publicando-com-porkbun-e-github/">
@@ -40,9 +41,9 @@
     <main>
         
 <article>
-    <h1>Tirando a poeira: Como publiquei meu portfólio usando Porkbun e GitHub</h1>
+    <h1>Publicando um site com GitHub Pages e Porkbun</h1>
     <p class="article-meta">
-        20 jul 2026 · web, dev, tutorial
+        20 jul 2026 · web, dev, tutorial, git
         
         <span class="sep">·</span>
         
@@ -51,31 +52,147 @@
         
     </p>
 
-    <h3>Os bits estão acumulados, eu sei</h3>
-<p>Se a frequência de posts deste blog fosse um exame de eletrocardiograma, o médico já teria assinado meu atestado de óbito. Sim, faz um tempo que não publico nada por aqui, mas
-hoje quero contar um pouco sobre os bastidores de como este site saiu da minha máquina local e foi parar na internet, sob o domínio <strong>renaldofreire.dev</strong>. A melhor parte? Custa menos do que duas xícaras de café por ano.</p>
+    <p>Hospedar um site estático no GitHub Pages utilizando um domínio próprio comprado no Porkbun é uma das formas mais eficientes, seguras e econômicas de colocar um projeto no ar.</p>
+<p>A infraestrutura não depende de servidores dedicados nem de bancos de dados: os arquivos HTML, CSS e ativos estáticos são servidos pela CDN global do GitHub com certificado SSL gratuito e renovação automática.</p>
+<p>Abaixo está o passo a passo completo para configurar o repositório, o DNS e o deploy automatizado.</p>
 <hr />
-<h3>O Motor: Flask e Markdown</h3>
-<p>Antes de falarmos sobre como o site foi publicado, vale entender do que ele é feito. Eu poderia ter usado WordPress, mas como gosto de entender onde cada parafuso se encaixa, decidi usar <strong>Flask</strong> (um framework leve em Python) e <strong>Markdown</strong> (uma forma simples de escrever textos que o Python converte em HTML).</p>
-<p>Para colocar isso na internet de forma rápida e segura, usei o <strong>Frozen-Flask</strong>. Ele roda na minha máquina, lê todo o código dinâmico e "congela" o site, gerando apenas arquivos HTML, CSS e JS estáticos. O resultado? Um site extremamente leve, sem banco de dados para dar dor de cabeça e impossível de ser invadido por vulnerabilidades comuns.</p>
+<h3>1. Preparação no Repositório (Arquivo CNAME)</h3>
+<p>Para que o GitHub Pages saiba qual domínio deve responder pelo seu repositório, é necessário incluir um arquivo chamado <code>CNAME</code> na raiz da publicação (por exemplo, na branch <code>gh-pages</code> ou dentro da pasta gerada pelo seu gerador estático).</p>
+<p>O conteúdo do arquivo deve ser apenas o seu domínio, sem protocolo (<code>https://</code>) e sem barras:</p>
+<div class="codehilite"><pre><span></span><code>renaldofreire.dev
+</code></pre></div>
+
+<p>Se o seu site usa geradores estáticos (como Frozen-Flask, Hugo, Zola ou Jekyll), garanta que o processo de build crie ou copie esse arquivo para o diretório final de saída.</p>
 <hr />
-<h3>A Garagem Gratuita: GitHub Pages</h3>
-<p>Depois de "congelar" o site, eu precisava de um lugar para guardá-lo. É aí que entra o <strong>GitHub</strong>. </p>
-<p>Além de ser a plataforma onde guardamos códigos de programação, o GitHub tem um serviço chamado <strong>GitHub Pages</strong>. Pense nele como uma hospedagem gratuita para sites estáticos. Eu simplesmente envio os arquivos gerados para lá, e o GitHub se encarrega de exibi-los para o mundo. </p>
-<p>Mas subir esses arquivos manualmente toda vez seria um porre. Por isso, configurei o <strong>GitHub Actions</strong> — que funciona como um assistente virtual. Toda vez que escrevo um post novo (como este) e faço um envio de código (<code>git push</code>), esse assistente acorda sozinho, roda os scripts em Python para atualizar o site e publica a nova versão no ar em segundos.</p>
+<h3>2. Configuração de DNS no Porkbun</h3>
+<p>No painel de gerenciamento do Porkbun, acesse <strong>Domain Management</strong>, localize seu domínio e clique em <strong>DNS Records</strong>.</p>
+<p>Remova os registros padrões de estacionamento de domínio (parking) e adicione as seguintes entradas:</p>
+<h4>A Records (Domínio Apex <code>@</code>)</h4>
+<p>Crie 4 registros do tipo <strong>A</strong> apontando o host <code>@</code> (ou em branco) para os IPs da CDN do GitHub Pages:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Tipo</th>
+<th style="text-align: left;">Host</th>
+<th style="text-align: left;">Resposta / Valor</th>
+<th style="text-align: left;">TTL</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>A</strong></td>
+<td style="text-align: left;"><code>@</code></td>
+<td style="text-align: left;"><code>185.199.108.153</code></td>
+<td style="text-align: left;">600</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>A</strong></td>
+<td style="text-align: left;"><code>@</code></td>
+<td style="text-align: left;"><code>185.199.109.153</code></td>
+<td style="text-align: left;">600</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>A</strong></td>
+<td style="text-align: left;"><code>@</code></td>
+<td style="text-align: left;"><code>185.199.110.153</code></td>
+<td style="text-align: left;">600</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>A</strong></td>
+<td style="text-align: left;"><code>@</code></td>
+<td style="text-align: left;"><code>185.199.111.153</code></td>
+<td style="text-align: left;">600</td>
+</tr>
+</tbody>
+</table>
+<p><em>(Opcional: você também pode adicionar os registros AAAA correspondentes para IPv6: <code>2606:50c0:8000::153</code>, <code>2606:50c0:8001::153</code>, <code>2606:50c0:8002::153</code> e <code>2606:50c0:8003::153</code>).</em></p>
+<h4>CNAME Record (Subdomínio <code>www</code>)</h4>
+<p>Para que o tráfego de <code>www.seudominio.com</code> seja redirecionado corretamente, crie um registro <strong>CNAME</strong>:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Tipo</th>
+<th style="text-align: left;">Host</th>
+<th style="text-align: left;">Resposta / Valor</th>
+<th style="text-align: left;">TTL</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>CNAME</strong></td>
+<td style="text-align: left;"><code>www</code></td>
+<td style="text-align: left;"><code>&lt;seu-usuario&gt;.github.io</code></td>
+<td style="text-align: left;">600</td>
+</tr>
+</tbody>
+</table>
+<p>Substitua <code>&lt;seu-usuario&gt;</code> pelo seu nome de usuário no GitHub.</p>
 <hr />
-<h3>O Endereço Próprio: Porkbun e DNS</h3>
-<p>Ter o site no GitHub é ótimo, mas o endereço padrão seria algo sem graça como <em>renaldofreire.github.io</em>. Eu queria algo com mais personalidade.</p>
-<p>Para resolver isso, comprei o domínio <strong>renaldofreire.dev</strong> na <strong>Porkbun</strong> (uma registradora de domínios muito querida na comunidade dev, famosa pelos preços honestos e pelo mascote de porquinho).</p>
-<p>Depois de comprar o domínio, a mágica acontece na configuração do <strong>DNS</strong> (que funciona como a lista telefônica da internet):
-1. No painel da Porkbun, apontei o domínio para os servidores do GitHub.
-2. No GitHub, criei um arquivo chamado <code>CNAME</code> dizendo: <em>"Ei, quando alguém digitar renaldofreire.dev, mostre a minha página!"</em>.</p>
-<p>Tudo isso se conecta perfeitamente. O domínio direciona o visitante ao GitHub Pages, que por sua vez entrega o site estático que foi gerado de forma automática pelo Python.</p>
+<h3>3. Automação de Deploy com GitHub Actions</h3>
+<p>Em vez de compilar e subir arquivos manualmente, utilize um workflow do GitHub Actions em <code>.github/workflows/deploy.yml</code>. </p>
+<p>A cada <code>git push</code> na branch <code>main</code>, o runner monta o ambiente, compila as páginas estáticas e publica o resultado na branch <code>gh-pages</code>:</p>
+<div class="codehilite"><pre><span></span><code><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Build &amp; Deploy</span>
+
+<span class="nt">on</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">push</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">branches</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">main</span><span class="p p-Indicator">]</span>
+<span class="w">  </span><span class="nt">workflow_dispatch</span><span class="p">:</span>
+
+<span class="nt">jobs</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">build-and-deploy</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">runs-on</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ubuntu-latest</span>
+<span class="w">    </span><span class="nt">permissions</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">contents</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">write</span>
+
+<span class="w">    </span><span class="nt">steps</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Checkout</span>
+<span class="w">        </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">actions/checkout@v4</span>
+
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Setup Python</span>
+<span class="w">        </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">actions/setup-python@v5</span>
+<span class="w">        </span><span class="nt">with</span><span class="p">:</span>
+<span class="w">          </span><span class="nt">python-version</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;3.12&quot;</span>
+<span class="w">          </span><span class="nt">cache</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;pip&quot;</span>
+
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Install dependencies</span>
+<span class="w">        </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pip install -r requirements.txt</span>
+
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Build static site</span>
+<span class="w">        </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">python freeze.py</span>
+
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Deploy to GitHub Pages</span>
+<span class="w">        </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">peaceiris/actions-gh-pages@v4</span>
+<span class="w">        </span><span class="nt">with</span><span class="p">:</span>
+<span class="w">          </span><span class="nt">github_token</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${{ secrets.GITHUB_TOKEN }}</span>
+<span class="w">          </span><span class="nt">publish_dir</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./docs</span>
+<span class="w">          </span><span class="nt">publish_branch</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gh-pages</span>
+</code></pre></div>
+
 <hr />
-<h3>Conclusão</h3>
-<p>Colocar um site no ar hoje não precisa envolver servidores caros ou configurações de rede assustadoras. Com a combinação de ferramentas estáticas, o GitHub Pages para hospedagem gratuita e um domínio barato na Porkbun, você consegue ter seu próprio espaço na internet com controle total.</p>
-<p>Prometo que o próximo post não vai demorar tanto para sair.</p>
-<p>Até a próxima, de preferência com uma xícara de café fresca ao lado!</p>
+<h3>4. Ativação do Domínio e HTTPS no GitHub</h3>
+<p>Após o primeiro deploy da branch <code>gh-pages</code>:</p>
+<ol>
+<li>No repositório do GitHub, vá em <strong>Settings</strong> &gt; <strong>Pages</strong>.</li>
+<li>Em <strong>Build and deployment</strong>, selecione:</li>
+<li><strong>Source</strong>: <code>Deploy from a branch</code></li>
+<li><strong>Branch</strong>: <code>gh-pages</code> / <code>/ (root)</code></li>
+<li>Em <strong>Custom domain</strong>, digite seu domínio (ex: <code>renaldofreire.dev</code>) e clique em <strong>Save</strong>.</li>
+<li>O GitHub verificará os registros de DNS configurados no Porkbun. Uma vez aprovado, marque a opção <strong>Enforce HTTPS</strong>. O GitHub emitirá um certificado SSL Let's Encrypt automaticamente.</li>
+</ol>
+<hr />
+<h3>5. Verificação via Terminal</h3>
+<p>Para checar se o DNS já propagou antes de testar no navegador:</p>
+<div class="codehilite"><pre><span></span><code>dig<span class="w"> </span>+noall<span class="w"> </span>+answer<span class="w"> </span>renaldofreire.dev<span class="w"> </span>A
+</code></pre></div>
+
+<p>A resposta deve listar os 4 endereços IP configurados:</p>
+<div class="codehilite"><pre><span></span><code>renaldofreire.dev.    600    IN    A    185.199.108.153
+renaldofreire.dev.    600    IN    A    185.199.109.153
+renaldofreire.dev.    600    IN    A    185.199.110.153
+renaldofreire.dev.    600    IN    A    185.199.111.153
+</code></pre></div>
+
+<p>Com essa estrutura, a manutenção se resume a adicionar ou editar arquivos de conteúdo e fazer o push para o Git. O restante do fluxo é totalmente automático e sem custo de hospedagem.</p>
 </article>
 
 <a class="back-link" href="../index.html">← Voltar ao blog</a>

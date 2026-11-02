@@ -5,31 +5,15 @@
     <link>https://renaldofreire.dev/</link>
     <description>Posts de Renaldo Freire</description>
     <language>pt-BR</language>
-    <lastBuildDate>Mon, 02 Nov 2026 10:09:54 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 02 Nov 2026 11:00:34 +0000</lastBuildDate>
     <atom:link href="https://renaldofreire.dev/feed.xml" rel="self" type="application/rss+xml"/>
     
     <item>
-        <title><![CDATA[Tirando a poeira: Como publiquei meu portfólio usando Porkbun e GitHub]]></title>
+        <title><![CDATA[Publicando um site com GitHub Pages e Porkbun]]></title>
         <link>https://renaldofreire.dev/blog/publicando-com-porkbun-e-github/</link>
-        <description><![CDATA[Um guia leve e sem mistérios sobre como registrar seu domínio e colocar seu site no ar de graça.]]></description>
+        <description><![CDATA[Guia prático para hospedar um site estático no GitHub Pages e configurar um domínio personalizado via Porkbun com HTTPS.]]></description>
         <pubDate>Mon, 20 Jul 2026 00:00:00 +0000</pubDate>
         <guid>https://renaldofreire.dev/blog/publicando-com-porkbun-e-github/</guid>
-    </item>
-    
-    <item>
-        <title><![CDATA[Em passos lentos, mas constantes]]></title>
-        <link>https://renaldofreire.dev/blog/em-passos-lentos/</link>
-        <description><![CDATA[O desafio (e o golpe no ego) de correr na Zona 2.]]></description>
-        <pubDate>Tue, 26 May 2026 00:00:00 +0000</pubDate>
-        <guid>https://renaldofreire.dev/blog/em-passos-lentos/</guid>
-    </item>
-    
-    <item>
-        <title><![CDATA[Como este blog (quase) se criou sozinho]]></title>
-        <link>https://renaldofreire.dev/blog/meu-primeiro-post/</link>
-        <description><![CDATA[O necessário para se ter um blog simples usando Python, café e teimosia.]]></description>
-        <pubDate>Mon, 25 May 2026 00:00:00 +0000</pubDate>
-        <guid>https://renaldofreire.dev/blog/meu-primeiro-post/</guid>
     </item>
     
 </channel>
