@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block title %}{{ "Message Sent" if lang == "en" else "Mensagem Enviada" }} — Renaldo Freire{% endblock %}
+
+{% block content %}
+<h1>{{ "Message sent successfully!" if lang == "en" else "Mensagem enviada com sucesso!" }}</h1>
+
+<p>{{ "Thank you for reaching out. I received your message and will reply shortly." if lang == "en" else "Obrigado pelo contato. Recebi sua mensagem e responderei em breve." }}</p>
+
+<a class="back-link" href="{{ url_for('index_en' if lang == 'en' else 'index') }}">← {{ "Back to home" if lang == "en" else "Voltar à página inicial" }}</a>
+{% endblock %}

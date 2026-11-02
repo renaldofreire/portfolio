@@ -9,7 +9,9 @@
 
 <form action="https://api.web3forms.com/submit" method="POST">
     <input type="hidden" name="access_key" value="{{ web3forms_key }}">
-    <input type="hidden" name="redirect" value="{{ url_for('index' if lang == 'pt' else 'index_en', _external=True) }}">
+    <input type="hidden" name="redirect" value="{{ url_for('contact_success_en' if lang == 'en' else 'contato_sucesso', _external=True) }}">
+    <input type="hidden" name="subject" value="{{ 'New message from portfolio' if lang == 'en' else 'Nova mensagem através do portfólio' }}">
+    <input type="checkbox" name="botcheck" style="display: none;">
 
     <label for="name">{{ "Name" if lang == "en" else "Nome" }}</label>
     <input type="text" id="name" name="name" required>

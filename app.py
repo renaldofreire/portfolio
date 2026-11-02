@@ -5,6 +5,14 @@ import yaml
 from flask import Flask, render_template, url_for
 from flask_flatpages import FlatPages
 
+if os.path.exists(".env"):
+    with open(".env", "r", encoding="utf-8") as f:
+        for line in f:
+            line = line.strip()
+            if line and not line.startswith("#") and "=" in line:
+                key, val = line.split("=", 1)
+                os.environ.setdefault(key.strip(), val.strip().strip("'\""))
+
 app = Flask(__name__)
 
 SITE_URL = os.environ.get("SITE_URL", "https://renaldofreire.dev").rstrip("/")
@@ -106,6 +114,11 @@ def contato():
     return render_template("contact.html", lang="pt")
 
 
+@app.route("/contato/sucesso/")
+def contato_sucesso():
+    return render_template("contact_success.html", lang="pt")
+
+
 @app.route("/feed.xml")
 def feed():
     return _render_feed(lang="pt")
@@ -137,6 +150,11 @@ def post_en(path):
 @app.route("/en/contact/")
 def contact_en():
     return render_template("contact.html", lang="en")
+
+
+@app.route("/en/contact/success/")
+def contact_success_en():
+    return render_template("contact_success.html", lang="en")
 
 
 @app.route("/en/feed.xml")
