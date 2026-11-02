@@ -6,15 +6,17 @@
 
 {% block content %}
 {% if lang == 'en' %}
-<h1>Hi, I'm Renaldo Freire.</h1>
-<p class="subtitle">I write code, run aimlessly in my spare time, and try to simplify things whenever possible.</p>
-<p>I'm a software developer who values open-source, Linux, and a good cup of coffee. This is my corner of the internet — a place to share <a href="{{ url_for('projects_en') }}">projects</a>, <a href="{{ url_for('blog_en') }}">writing</a>, and whatever I find interesting.</p>
+<h1>Hi, I'm Renaldo.</h1>
+<p class="subtitle">Runner in my spare time, open-source enthusiast, and a good cup of coffee.</p>
+<p>Quality Assurance Analyst with nearly 7 years of experience in process auditing, SLA/CSAT tracking, corrective action management, and report development.</p>
+<p>This is my corner of the internet — a place to share my <a href="{{ url_for('projects_en') }}">projects</a> and <a href="{{ url_for('blog_en') }}">writing</a>, or whatever else interests me.</p>
 
 <h2>Recent posts</h2>
 {% else %}
-<h1>Oi, eu sou o Renaldo Freire.</h1>
-<p class="subtitle">Escrevo código, corro sem rumo nas horas vagas e tento simplificar as coisas sempre que possível.</p>
-<p>Sou desenvolvedor de software, entusiasta de open-source, Linux e um bom café. Este é meu canto na internet — um espaço para compartilhar <a href="{{ url_for('projetos') }}">projetos</a>, <a href="{{ url_for('blog') }}">textos</a> e o que mais me interessar.</p>
+<h1>Oi, eu sou o Renaldo.</h1>
+<p class="subtitle">Corro nas horas vagas, sou entusiasta de software livre e um belo café.</p>
+<p>Analista de Qualidade com quase 7 anos de experiência em auditoria de processos, acompanhamento de SLA/CSAT, condução de ações corretivas e desenvolvimento de relatórios.</p>
+<p>Este é meu canto na internet, um espaço para compartilhar meus <a href="{{ url_for('projetos') }}">projetos</a> e <a href="{{ url_for('blog') }}">textos</a>, ou o que mais me interessar.</p>
 
 <h2>Posts recentes</h2>
 {% endif %}
