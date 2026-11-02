@@ -1,5 +1,9 @@
 name: Build & Deploy
 
+env:
+  WEB3FORMS_ACCESS_KEY: ${{ secrets.WEB3FORMS_ACCESS_KEY }}
+run: python freeze.py
+
 on:
   push:
     branches: [main]
