@@ -1,13 +1,13 @@
-# portfolio-bear
+# portfolio
 
-Portfolio pessoal minimalista. Inspirado no [Bear Blog](https://bearblog.dev).
+Minimalist personal portfolio and blog. Inspired by [Bear Blog](https://bearblog.dev).
 
-Zero JavaScript. ~100 linhas de CSS. Páginas de ~2-5kb.
+Zero JavaScript. Minimal CSS. ~2–5 KB pages.
 
 ## Stack
 
 - Python 3.12, Flask, Frozen-Flask, Flask-FlatPages
-- HTML semântico + CSS mínimo
+- Semantic HTML + minimal CSS
 - GitHub Pages
 
 ## Dev
