@@ -1,52 +1,134 @@
-title: "Tirando a poeira: Como publiquei meu portfólio usando Porkbun e GitHub"
+title: "Publicando um site com GitHub Pages e Porkbun"
 date: 2026-07-20
 lang: pt
-description: Um guia leve e sem mistérios sobre como registrar seu domínio e colocar seu site no ar de graça.
-tags: [web, dev, tutorial]
+description: Guia prático para hospedar um site estático no GitHub Pages e configurar um domínio personalizado via Porkbun com HTTPS.
+tags: [web, dev, tutorial, git]
 
-### Os bits estão acumulados, eu sei
+Hospedar um site estático no GitHub Pages utilizando um domínio próprio comprado no Porkbun é uma das formas mais eficientes, seguras e econômicas de colocar um projeto no ar.
 
-Se a frequência de posts deste blog fosse um exame de eletrocardiograma, o médico já teria assinado meu atestado de óbito. Sim, faz um tempo que não publico nada por aqui, mas
-hoje quero contar um pouco sobre os bastidores de como este site saiu da minha máquina local e foi parar na internet, sob o domínio **renaldofreire.dev**. A melhor parte? Custa menos do que duas xícaras de café por ano.
+A infraestrutura não depende de servidores dedicados nem de bancos de dados: os arquivos HTML, CSS e ativos estáticos são servidos pela CDN global do GitHub com certificado SSL gratuito e renovação automática.
 
----
-
-### O Motor: Flask e Markdown
-
-Antes de falarmos sobre como o site foi publicado, vale entender do que ele é feito. Eu poderia ter usado WordPress, mas como gosto de entender onde cada parafuso se encaixa, decidi usar **Flask** (um framework leve em Python) e **Markdown** (uma forma simples de escrever textos que o Python converte em HTML).
-
-Para colocar isso na internet de forma rápida e segura, usei o **Frozen-Flask**. Ele roda na minha máquina, lê todo o código dinâmico e "congela" o site, gerando apenas arquivos HTML, CSS e JS estáticos. O resultado? Um site extremamente leve, sem banco de dados para dar dor de cabeça e impossível de ser invadido por vulnerabilidades comuns.
+Abaixo está o passo a passo completo para configurar o repositório, o DNS e o deploy automatizado.
 
 ---
 
-### A Garagem Gratuita: GitHub Pages
+### 1. Preparação no Repositório (Arquivo CNAME)
 
-Depois de "congelar" o site, eu precisava de um lugar para guardá-lo. É aí que entra o **GitHub**. 
+Para que o GitHub Pages saiba qual domínio deve responder pelo seu repositório, é necessário incluir um arquivo chamado `CNAME` na raiz da publicação (por exemplo, na branch `gh-pages` ou dentro da pasta gerada pelo seu gerador estático).
 
-Além de ser a plataforma onde guardamos códigos de programação, o GitHub tem um serviço chamado **GitHub Pages**. Pense nele como uma hospedagem gratuita para sites estáticos. Eu simplesmente envio os arquivos gerados para lá, e o GitHub se encarrega de exibi-los para o mundo. 
+O conteúdo do arquivo deve ser apenas o seu domínio, sem protocolo (`https://`) e sem barras:
 
-Mas subir esses arquivos manualmente toda vez seria um porre. Por isso, configurei o **GitHub Actions** — que funciona como um assistente virtual. Toda vez que escrevo um post novo (como este) e faço um envio de código (`git push`), esse assistente acorda sozinho, roda os scripts em Python para atualizar o site e publica a nova versão no ar em segundos.
+```text
+renaldofreire.dev
+```
 
----
-
-### O Endereço Próprio: Porkbun e DNS
-
-Ter o site no GitHub é ótimo, mas o endereço padrão seria algo sem graça como *renaldofreire.github.io*. Eu queria algo com mais personalidade.
-
-Para resolver isso, comprei o domínio **renaldofreire.dev** na **Porkbun** (uma registradora de domínios muito querida na comunidade dev, famosa pelos preços honestos e pelo mascote de porquinho).
-
-Depois de comprar o domínio, a mágica acontece na configuração do **DNS** (que funciona como a lista telefônica da internet):
-1. No painel da Porkbun, apontei o domínio para os servidores do GitHub.
-2. No GitHub, criei um arquivo chamado `CNAME` dizendo: *"Ei, quando alguém digitar renaldofreire.dev, mostre a minha página!"*.
-
-Tudo isso se conecta perfeitamente. O domínio direciona o visitante ao GitHub Pages, que por sua vez entrega o site estático que foi gerado de forma automática pelo Python.
+Se o seu site usa geradores estáticos (como Frozen-Flask, Hugo, Zola ou Jekyll), garanta que o processo de build crie ou copie esse arquivo para o diretório final de saída.
 
 ---
 
-### Conclusão
+### 2. Configuração de DNS no Porkbun
 
-Colocar um site no ar hoje não precisa envolver servidores caros ou configurações de rede assustadoras. Com a combinação de ferramentas estáticas, o GitHub Pages para hospedagem gratuita e um domínio barato na Porkbun, você consegue ter seu próprio espaço na internet com controle total.
+No painel de gerenciamento do Porkbun, acesse **Domain Management**, localize seu domínio e clique em **DNS Records**.
 
-Prometo que o próximo post não vai demorar tanto para sair.
+Remova os registros padrões de estacionamento de domínio (parking) e adicione as seguintes entradas:
 
-Até a próxima, de preferência com uma xícara de café fresca ao lado!
+#### A Records (Domínio Apex `@`)
+Crie 4 registros do tipo **A** apontando o host `@` (ou em branco) para os IPs da CDN do GitHub Pages:
+
+| Tipo | Host | Resposta / Valor | TTL |
+| :--- | :--- | :--- | :--- |
+| **A** | `@` | `185.199.108.153` | 600 |
+| **A** | `@` | `185.199.109.153` | 600 |
+| **A** | `@` | `185.199.110.153` | 600 |
+| **A** | `@` | `185.199.111.153` | 600 |
+
+*(Opcional: você também pode adicionar os registros AAAA correspondentes para IPv6: `2606:50c0:8000::153`, `2606:50c0:8001::153`, `2606:50c0:8002::153` e `2606:50c0:8003::153`).*
+
+#### CNAME Record (Subdomínio `www`)
+Para que o tráfego de `www.seudominio.com` seja redirecionado corretamente, crie um registro **CNAME**:
+
+| Tipo | Host | Resposta / Valor | TTL |
+| :--- | :--- | :--- | :--- |
+| **CNAME** | `www` | `<seu-usuario>.github.io` | 600 |
+
+Substitua `<seu-usuario>` pelo seu nome de usuário no GitHub.
+
+---
+
+### 3. Automação de Deploy com GitHub Actions
+
+Em vez de compilar e subir arquivos manualmente, utilize um workflow do GitHub Actions em `.github/workflows/deploy.yml`. 
+
+A cada `git push` na branch `main`, o runner monta o ambiente, compila as páginas estáticas e publica o resultado na branch `gh-pages`:
+
+```yaml
+name: Build & Deploy
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: "pip"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Build static site
+        run: python freeze.py
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./docs
+          publish_branch: gh-pages
+```
+
+---
+
+### 4. Ativação do Domínio e HTTPS no GitHub
+
+Após o primeiro deploy da branch `gh-pages`:
+
+1. No repositório do GitHub, vá em **Settings** > **Pages**.
+2. Em **Build and deployment**, selecione:
+   - **Source**: `Deploy from a branch`
+   - **Branch**: `gh-pages` / `/ (root)`
+3. Em **Custom domain**, digite seu domínio (ex: `renaldofreire.dev`) e clique em **Save**.
+4. O GitHub verificará os registros de DNS configurados no Porkbun. Uma vez aprovado, marque a opção **Enforce HTTPS**. O GitHub emitirá um certificado SSL Let's Encrypt automaticamente.
+
+---
+
+### 5. Verificação via Terminal
+
+Para checar se o DNS já propagou antes de testar no navegador:
+
+```bash
+dig +noall +answer renaldofreire.dev A
+```
+
+A resposta deve listar os 4 endereços IP configurados:
+
+```text
+renaldofreire.dev.    600    IN    A    185.199.108.153
+renaldofreire.dev.    600    IN    A    185.199.109.153
+renaldofreire.dev.    600    IN    A    185.199.110.153
+renaldofreire.dev.    600    IN    A    185.199.111.153
+```
+
+Com essa estrutura, a manutenção se resume a adicionar ou editar arquivos de conteúdo e fazer o push para o Git. O restante do fluxo é totalmente automático e sem custo de hospedagem.
