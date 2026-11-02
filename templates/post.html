@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block title %}{{ post.title }} — Renaldo Freire{% endblock %}
+{% block description %}{{ post.description }}{% endblock %}
+{% block og_title %}{{ post.title }} — Renaldo Freire{% endblock %}
+{% block og_desc %}{{ post.description }}{% endblock %}
+{% block og_type %}article{% endblock %}
+
+{% block content %}
+<article>
+    <h1>{{ post.title }}</h1>
+    <p class="article-meta">
+        {{ post.date | format_date(lang) }}{% if post.tags %} · {{ post.tags | join(', ') }}{% endif %}
+        {% if alt_path %}
+        <span class="sep">·</span>
+        {% if lang == 'en' %}
+        <a href="{{ url_for('post', path=alt_path) }}">Ler em Português</a>
+        {% else %}
+        <a href="{{ url_for('post_en', path=alt_path) }}">Read in English</a>
+        {% endif %}
+        {% endif %}
+    </p>
+
+    {{ post.html | safe }}
+</article>
+
+<a class="back-link" href="{{ url_for('blog_en' if lang == 'en' else 'blog') }}">← {{ "Back to blog" if lang == "en" else "Voltar ao blog" }}</a>
+{% endblock %}

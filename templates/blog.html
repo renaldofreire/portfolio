@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block title %}Blog — Renaldo Freire{% endblock %}
+
+{% block content %}
+<h1>Blog</h1>
+
+<ul class="post-list">
+{% for post in posts %}
+    <li>
+        <a class="post-title" href="{{ url_for('post_en' if lang == 'en' else 'post', path=post|post_slug) }}">{{ post.title }}</a>
+        <span class="post-meta">{{ post.date | format_date(lang) }}{% if post.tags %} · {{ post.tags | join(', ') }}{% endif %}</span>
+        {% if post.description %}<span class="post-desc">{{ post.description }}</span>{% endif %}
+    </li>
+{% endfor %}
+</ul>
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block title %}{{ "Contact" if lang == "en" else "Contato" }} — Renaldo Freire{% endblock %}
+
+{% block content %}
+<h1>{{ "Contact" if lang == "en" else "Contato" }}</h1>
+
+<p>{{ "Send me a message using the form below, or reach me at " if lang == "en" else "Envie uma mensagem pelo formulário abaixo, ou escreva para " }}<a href="mailto:contato@renaldofreire.dev">contato@renaldofreire.dev</a>.</p>
+
+<form action="https://api.web3forms.com/submit" method="POST">
+    <input type="hidden" name="access_key" value="{{ web3forms_key }}">
+    <input type="hidden" name="redirect" value="{{ url_for('index' if lang == 'pt' else 'index_en', _external=True) }}">
+
+    <label for="name">{{ "Name" if lang == "en" else "Nome" }}</label>
+    <input type="text" id="name" name="name" required>
+
+    <label for="email">Email</label>
+    <input type="email" id="email" name="email" required>
+
+    <label for="message">{{ "Message" if lang == "en" else "Mensagem" }}</label>
+    <textarea id="message" name="message" rows="6" required></textarea>
+
+    <button type="submit">{{ "Send" if lang == "en" else "Enviar" }}</button>
+</form>
+{% endblock %}

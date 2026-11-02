@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="{{ 'en' if lang == 'en' else 'pt-BR' }}">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}Renaldo Freire{% endblock %}</title>
+    {% set default_desc = "Software developer, runner, open-source enthusiast." if lang == "en" else "Desenvolvedor de software, corredor, entusiasta open-source." %}
+    <meta name="description" content="{% block description %}{{ default_desc }}{% endblock %}">
+    <meta property="og:title" content="{% block og_title %}Renaldo Freire{% endblock %}">
+    <meta property="og:description" content="{% block og_desc %}{{ default_desc }}{% endblock %}">
+    <meta property="og:type" content="{% block og_type %}website{% endblock %}">
+    <meta property="og:url" content="{% block og_url %}{{ request.base_url }}{% endblock %}">
+    <meta property="og:site_name" content="Renaldo Freire">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="{% block twitter_title %}{{ self.og_title() }}{% endblock %}">
+    <meta name="twitter:description" content="{% block twitter_desc %}{{ self.og_desc() }}{% endblock %}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="{{ url_for('feed') if lang == 'pt' else url_for('feed_en') }}">
+    <link rel="canonical" href="{% block canonical %}{{ request.base_url }}{% endblock %}">
+    {% block head %}{% endblock %}
+</head>
+<body>
+    <header>
+        <nav>
+            {% if lang == 'en' %}
+            <a class="site-name" href="{{ url_for('index_en') }}"><strong>Renaldo Freire</strong></a>
+            <span class="nav-links">
+                <a href="{{ url_for('projects_en') }}">Projects</a>
+                <span class="sep">/</span>
+                <a href="{{ url_for('blog_en') }}">Blog</a>
+                <span class="sep">/</span>
+                <a href="{{ url_for('contact_en') }}">Contact</a>
+                <span class="sep">/</span>
+                <a href="{{ url_for('static', filename='cv.pdf') }}">CV</a>
+            </span>
+            {% else %}
+            <a class="site-name" href="{{ url_for('index') }}"><strong>Renaldo Freire</strong></a>
+            <span class="nav-links">
+                <a href="{{ url_for('projetos') }}">Projetos</a>
+                <span class="sep">/</span>
+                <a href="{{ url_for('blog') }}">Blog</a>
+                <span class="sep">/</span>
+                <a href="{{ url_for('contato') }}">Contato</a>
+                <span class="sep">/</span>
+                <a href="{{ url_for('static', filename='cv.pdf') }}">CV</a>
+            </span>
+            {% endif %}
+        </nav>
+    </header>
+
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer>
+        <p>
+            {% if lang == 'en' %}
+            <a href="{{ url_for('index') }}">Ler em Português</a>
+            {% else %}
+            <a href="{{ url_for('index_en') }}">Read in English</a>
+            {% endif %}
+            <span class="sep">·</span>
+            <a href="{{ url_for('feed') if lang == 'pt' else url_for('feed_en') }}">RSS</a>
+            <span class="sep">·</span>
+            <a href="https://github.com/renaldofreire">GitHub</a>
+        </p>
+    </footer>
+</body>
+</html>

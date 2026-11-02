@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block title %}{{ "Projects" if lang == "en" else "Projetos" }} — Renaldo Freire{% endblock %}
+
+{% block content %}
+<h1>{{ "Projects" if lang == "en" else "Projetos" }}</h1>
+
+<ul class="project-list">
+{% for project in projects %}
+    <li>
+        <a href="{{ project.url }}"><strong>{{ project.name }}</strong></a>
+        — {{ project.description_en if lang == 'en' else project.description_pt }}
+        <br><span class="project-tags">{{ project.tags | join(' · ') }}</span>
+    </li>
+{% endfor %}
+</ul>
+{% endblock %}

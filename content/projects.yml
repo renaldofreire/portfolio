@@ -1,0 +1,23 @@
+- name: portfolio
+  description_pt: Meu portfolio pessoal — minimalista e estático.
+  description_en: My personal portfolio — minimalist and static.
+  url: https://github.com/renaldofreire/portfolio
+  tags: [python, flask, html]
+
+- name: strava_exporter
+  description_pt: Exportador de atividades do Strava.
+  description_en: Strava activities exporter.
+  url: https://github.com/renaldofreire/strava_exporter
+  tags: [python]
+
+- name: dotfiles
+  description_pt: Minhas configurações pessoais (Neovim, Zsh, etc).
+  description_en: My personal configurations (Neovim, Zsh, etc).
+  url: https://github.com/renaldofreire/dotfiles
+  tags: [lua, config]
+
+- name: my_dashboard
+  description_pt: Dashboard pessoal.
+  description_en: Personal dashboard.
+  url: https://github.com/renaldofreire/my_dashboard
+  tags: [python]

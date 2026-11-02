@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+    <title>Renaldo Freire</title>
+    <link>{{ site_url }}{{ "/en/" if lang == "en" else "/" }}</link>
+    <description>{{ "Posts by Renaldo Freire" if lang == "en" else "Posts de Renaldo Freire" }}</description>
+    <language>{{ "en" if lang == "en" else "pt-BR" }}</language>
+    <lastBuildDate>{{ build_date }}</lastBuildDate>
+    <atom:link href="{{ site_url }}{{ "/en/feed.xml" if lang == "en" else "/feed.xml" }}" rel="self" type="application/rss+xml"/>
+    {% for post in posts[:20] %}
+    <item>
+        <title><![CDATA[{{ post.title }}]]></title>
+        <link>{{ site_url }}{{ "/en/blog/" if lang == "en" else "/blog/" }}{{ post|post_slug }}/</link>
+        <description><![CDATA[{{ post.description }}]]></description>
+        <pubDate>{{ post.date | format_rfc822 }}</pubDate>
+        <guid>{{ site_url }}{{ "/en/blog/" if lang == "en" else "/blog/" }}{{ post|post_slug }}/</guid>
+    </item>
+    {% endfor %}
+</channel>
+</rss>
